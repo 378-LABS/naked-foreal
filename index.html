@@ -40,4 +40,305 @@ body { background: var(--bg); color: var(--text); font-family: var(--f); -webkit
 .wrap { max-width: 680px; margin: 0 auto; padding: 0 20px 80px; }
 header { padding: 20px 0 16px; display: flex; align-items: center; justify-content: space-between; gap: 12px; border-bottom: 1px solid var(--border); margin-bottom: 20px; animation: fadeUp .4s ease both; }
 .logo-row { display: flex; align-items: center; gap: 12px; }
-.logo-badge { width: 44px; height: 44px; background: var(--ora); borde
+.logo-badge { width: 44px; height: 44px; background: var(--ora); border-radius: 10px; display: flex; align-items: center; justify-content: center; flex-shrink: 0; }
+.logo-badge span { font-family: var(--mono); font-size: 13px; font-weight: 500; color: #fff; letter-spacing: 0.05em; }
+.logo-sup { font-size: 15px; font-weight: 700; color: var(--text); letter-spacing: -0.01em; line-height: 1.1; }
+.logo-sub { font-family: var(--mono); font-size: 10px; letter-spacing: 0.12em; color: var(--ora); text-transform: uppercase; line-height: 1; margin-top: 3px; }
+.header-sep { width: 1px; height: 32px; background: var(--border); flex-shrink: 0; }
+.header-title { font-size: 13px; color: var(--muted); font-weight: 400; line-height: 1.4; }
+.header-right { display: flex; flex-direction: column; align-items: flex-end; gap: 4px; flex-shrink: 0; }
+.date-lbl { font-family: var(--mono); font-size: 9px; letter-spacing: 0.15em; color: var(--dim); text-transform: uppercase; }
+.live-pill { display: inline-flex; align-items: center; gap: 6px; border: 1.5px solid var(--green-lt); border-radius: 20px; padding: 4px 12px; font-family: var(--mono); font-size: 10px; letter-spacing: 0.12em; color: var(--green-lt); }
+.live-dot { width: 6px; height: 6px; background: var(--green-lt); border-radius: 50%; box-shadow: 0 0 5px var(--green-lt); animation: pulse 1.8s infinite; }
+@keyframes pulse { 0%,100%{opacity:1} 50%{opacity:.3} }
+.hero-card { background: var(--ora); border-radius: 16px; padding: 28px 24px; margin-bottom: 14px; animation: fadeUp .35s .1s ease both; }
+.hero-eyebrow { font-family: var(--mono); font-size: 9px; letter-spacing: 0.22em; text-transform: uppercase; color: rgba(255,255,255,0.65); margin-bottom: 10px; }
+.hero-h1 { font-family: var(--mono); font-size: clamp(30px, 7vw, 48px); font-weight: 500; line-height: 1; letter-spacing: -0.02em; color: #fff; text-transform: uppercase; margin-bottom: 14px; }
+.hero-body { font-size: 14px; font-weight: 300; color: rgba(255,255,255,0.82); line-height: 1.65; margin-bottom: 24px; max-width: 500px; }
+.hero-stats { display: grid; grid-template-columns: 1fr 1fr; gap: 10px; margin-bottom: 22px; }
+.h-stat-num { font-size: 36px; font-weight: 700; color: #fff; letter-spacing: -0.02em; line-height: 1; margin-bottom: 3px; }
+.h-stat-num.green { color: var(--green-lt); }
+.h-stat-num.cream { color: rgba(255,255,255,0.9); }
+.h-stat-lbl { font-family: var(--mono); font-size: 9px; letter-spacing: 0.15em; color: rgba(255,255,255,0.55); text-transform: uppercase; }
+.hero-btns { display: flex; gap: 8px; flex-wrap: wrap; }
+.btn-white { font-family: var(--mono); font-size: 10px; letter-spacing: 0.14em; text-transform: uppercase; background: #fff; color: var(--ora); border: none; padding: 11px 22px; border-radius: 8px; cursor: pointer; text-decoration: none; font-weight: 500; transition: opacity .15s; display: inline-block; }
+.btn-white:hover { opacity: .88; }
+.btn-outline-white { font-family: var(--mono); font-size: 10px; letter-spacing: 0.14em; text-transform: uppercase; background: transparent; color: rgba(255,255,255,0.8); border: 1.5px solid rgba(255,255,255,0.35); padding: 11px 22px; border-radius: 8px; cursor: pointer; text-decoration: none; transition: all .15s; display: inline-block; }
+.btn-outline-white:hover { border-color: #fff; color: #fff; }
+.sec-lbl { font-family: var(--mono); font-size: 9px; letter-spacing: 0.3em; text-transform: uppercase; color: var(--muted); margin: 24px 0 10px; display: flex; align-items: center; gap: 12px; }
+.sec-lbl::after { content: ''; flex: 1; height: 1px; background: var(--border); }
+.channel-card { border-radius: 16px; padding: 26px 24px; margin-bottom: 12px; animation: fadeUp .4s ease both; }
+.ch-inner-eyebrow { font-family: var(--mono); font-size: 9px; letter-spacing: 0.22em; text-transform: uppercase; margin-bottom: 6px; }
+.ch-name { font-family: var(--mono); font-size: clamp(22px, 5vw, 32px); font-weight: 500; letter-spacing: -0.01em; text-transform: uppercase; line-height: 1.05; margin-bottom: 10px; }
+.ch-desc { font-size: 13px; font-weight: 300; line-height: 1.65; margin-bottom: 20px; max-width: 480px; }
+.ch-metric-row { display: grid; grid-template-columns: 1fr 1fr; gap: 10px; margin-bottom: 14px; }
+.ch-metric-num { font-size: 38px; font-weight: 700; letter-spacing: -0.03em; line-height: 1; margin-bottom: 3px; }
+.ch-metric-lbl { font-family: var(--mono); font-size: 8px; letter-spacing: 0.18em; text-transform: uppercase; }
+.ch-tags { display: flex; gap: 6px; flex-wrap: wrap; align-items: center; }
+.ch-tag { font-family: var(--mono); font-size: 8px; letter-spacing: 0.14em; text-transform: uppercase; padding: 4px 10px; border-radius: 6px; }
+.ch-link { font-family: var(--mono); font-size: 9px; letter-spacing: 0.12em; text-transform: uppercase; padding: 6px 14px; border-radius: 6px; text-decoration: none; display: inline-flex; align-items: center; gap: 5px; transition: opacity .15s; font-weight: 500; }
+.ch-link:hover { opacity: .8; }
+.ch-link-ora { background: rgba(255,255,255,0.18); color: #fff; }
+.ch-link-teal { background: rgba(255,255,255,0.15); color: #fff; }
+.ch-link-pur { background: rgba(255,255,255,0.15); color: #fff; }
+.ch-naked { background: var(--ora); }
+.ch-naked .ch-inner-eyebrow { color: rgba(255,255,255,0.55); }
+.ch-naked .ch-name { color: #fff; }
+.ch-naked .ch-desc { color: rgba(255,255,255,0.78); }
+.ch-naked .ch-metric-num { color: var(--green-lt); }
+.ch-naked .ch-metric-lbl { color: rgba(255,255,255,0.55); }
+.ch-naked .ch-tag { background: rgba(255,255,255,0.15); color: rgba(255,255,255,0.85); }
+.ch-sole { background: var(--teal-bg); }
+.ch-sole .ch-inner-eyebrow { color: rgba(255,255,255,0.5); }
+.ch-sole .ch-name { color: #fff; }
+.ch-sole .ch-desc { color: rgba(255,255,255,0.75); }
+.ch-sole .ch-metric-num { color: #5DE4F5; }
+.ch-sole .ch-metric-lbl { color: rgba(255,255,255,0.5); }
+.ch-sole .ch-tag { background: rgba(255,255,255,0.12); color: rgba(255,255,255,0.8); }
+.ch-beauty { background: var(--purple); }
+.ch-beauty .ch-inner-eyebrow { color: rgba(255,255,255,0.5); }
+.ch-beauty .ch-name { color: #fff; }
+.ch-beauty .ch-desc { color: rgba(255,255,255,0.75); }
+.ch-beauty .ch-metric-num { color: #C4B5FD; }
+.ch-beauty .ch-metric-lbl { color: rgba(255,255,255,0.5); }
+.ch-beauty .ch-tag { background: rgba(255,255,255,0.12); color: rgba(255,255,255,0.8); }
+.stat-strip { background: var(--white); border: 1px solid var(--border); border-radius: 14px; display: grid; grid-template-columns: repeat(4, 1fr); overflow: hidden; margin-bottom: 12px; animation: fadeUp .4s .2s ease both; }
+.strip-stat { padding: 18px 16px; border-right: 1px solid var(--border); text-align: center; }
+.strip-stat:last-child { border-right: none; }
+.strip-num { font-size: 24px; font-weight: 700; color: var(--text); letter-spacing: -0.02em; line-height: 1; margin-bottom: 4px; }
+.strip-lbl { font-family: var(--mono); font-size: 8px; letter-spacing: 0.15em; text-transform: uppercase; color: var(--muted); }
+.white-card { background: var(--white); border: 1px solid var(--border); border-radius: 14px; padding: 24px; margin-bottom: 12px; animation: fadeUp .4s ease both; }
+.wc-title { font-size: 17px; font-weight: 700; color: var(--text); letter-spacing: -0.01em; margin-bottom: 10px; }
+.wc-body { font-size: 13px; font-weight: 400; color: var(--mid); line-height: 1.75; }
+.wc-body strong { color: var(--text); font-weight: 600; }
+.feature-list { list-style: none; margin-top: 12px; display: flex; flex-direction: column; gap: 8px; }
+.feature-list li { display: flex; align-items: flex-start; gap: 9px; font-size: 13px; color: var(--mid); line-height: 1.5; }
+.feature-list li::before { content: '›'; color: var(--ora); font-size: 16px; line-height: 1.1; flex-shrink: 0; font-weight: 700; }
+.tier-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 10px; margin-bottom: 12px; }
+.tier { background: var(--white); border: 1px solid var(--border); border-radius: 14px; padding: 22px 20px; position: relative; transition: border-color .2s; }
+.tier:hover { border-color: #ccc; }
+.tier.featured { border-color: var(--ora); background: linear-gradient(160deg, rgba(242,101,34,0.04), #fff); grid-column: 1 / -1; }
+.tier-badge { position: absolute; top: -11px; left: 50%; transform: translateX(-50%); background: var(--ora); color: #fff; font-family: var(--mono); font-size: 8px; letter-spacing: 0.2em; text-transform: uppercase; padding: 3px 14px; border-radius: 20px; white-space: nowrap; }
+.tier-name { font-size: 16px; font-weight: 700; color: var(--text); margin-bottom: 4px; }
+.tier-price { font-family: var(--mono); font-size: 10px; letter-spacing: 0.12em; color: var(--ora); text-transform: uppercase; padding-bottom: 14px; margin-bottom: 14px; border-bottom: 1px solid var(--border); }
+.tier-list { list-style: none; display: flex; flex-direction: column; gap: 8px; }
+.tier-list li { font-size: 13px; color: var(--mid); padding-left: 15px; position: relative; line-height: 1.45; }
+.tier-list li::before { content: '›'; position: absolute; left: 0; color: var(--teal); font-size: 15px; font-weight: 700; }
+.tier.featured .tier-grid-inner { display: grid; grid-template-columns: 1fr 1fr; gap: 16px; }
+.cta-card { background: var(--text); border-radius: 16px; padding: 28px 24px; margin-bottom: 12px; animation: fadeUp .4s .2s ease both; display: flex; justify-content: space-between; align-items: center; gap: 20px; }
+.cta-eyebrow { font-family: var(--mono); font-size: 9px; letter-spacing: 0.25em; text-transform: uppercase; color: var(--ora); margin-bottom: 8px; }
+.cta-h2 { font-size: 22px; font-weight: 700; color: #fff; letter-spacing: -0.02em; margin-bottom: 8px; line-height: 1.2; }
+.cta-sub { font-size: 13px; font-weight: 300; color: #8A9BB0; max-width: 360px; line-height: 1.65; }
+.cta-actions { display: flex; flex-direction: column; gap: 8px; flex-shrink: 0; }
+.btn-ora { font-family: var(--mono); font-size: 10px; letter-spacing: 0.14em; text-transform: uppercase; background: var(--ora); color: #fff; border: none; padding: 12px 22px; border-radius: 8px; cursor: pointer; text-decoration: none; display: inline-block; transition: opacity .15s; text-align: center; }
+.btn-ora:hover { opacity: .88; }
+.btn-ghost-dark { font-family: var(--mono); font-size: 10px; letter-spacing: 0.14em; text-transform: uppercase; background: transparent; color: #8A9BB0; border: 1px solid rgba(255,255,255,0.12); padding: 12px 22px; border-radius: 8px; cursor: pointer; text-decoration: none; display: inline-block; transition: all .15s; text-align: center; }
+.btn-ghost-dark:hover { border-color: rgba(255,255,255,0.35); color: #ddd; }
+footer { padding-top: 20px; border-top: 1px solid var(--border); display: flex; justify-content: space-between; align-items: center; animation: fadeUp .4s ease both; }
+.footer-left { display: flex; align-items: center; gap: 10px; }
+.footer-badge { background: var(--ora); color: #fff; font-family: var(--mono); font-size: 8px; letter-spacing: 0.15em; padding: 3px 8px; border-radius: 4px; text-transform: uppercase; }
+.footer-name { font-weight: 700; font-size: 13px; color: var(--text); }
+.footer-sep { color: var(--dim); }
+.footer-sub { font-size: 12px; color: var(--muted); }
+.footer-right { font-family: var(--mono); font-size: 9px; letter-spacing: 0.12em; color: var(--dim); text-align: right; line-height: 1.8; text-transform: uppercase; }
+.footer-right a { color: var(--teal); text-decoration: none; }
+@keyframes fadeUp { from { opacity: 0; transform: translateY(10px); } to { opacity: 1; transform: none; } }
+@media (max-width: 540px) {
+  .stat-strip { grid-template-columns: 1fr 1fr; }
+  .strip-stat:nth-child(2) { border-right: none; }
+  .tier-grid { grid-template-columns: 1fr; }
+  .tier.featured .tier-grid-inner { grid-template-columns: 1fr; }
+  .cta-card { flex-direction: column; }
+  footer { flex-direction: column; gap: 12px; }
+  .footer-right { text-align: center; }
+}
+</style>
+</head>
+<body>
+<div class="wrap">
+  <header>
+    <div class="logo-row">
+      <div class="logo-badge"><span>NF</span></div>
+      <div class="logo-text">
+        <div class="logo-sup">Naked Foreal</div>
+        <div class="logo-sub">AI UGC Studio</div>
+      </div>
+    </div>
+    <div class="header-sep"></div>
+    <div class="header-title">Brand Partnership<br>Overview</div>
+    <div class="header-right">
+      <div class="date-lbl">2026</div>
+      <div class="live-pill"><div class="live-dot"></div>Live</div>
+    </div>
+  </header>
+
+  <div class="hero-card">
+    <div class="hero-eyebrow">// 783labs.com — Content Studio · Los Angeles</div>
+    <div class="hero-h1">Turn One Shoot Into<br>50–100 Pieces</div>
+    <p class="hero-body">We use AI to multiply a single shoot into platform-ready content — not generated from scratch, but built from your real brand assets. The result is 50–100 on-brand pieces per shoot, distributed across Pinterest, TikTok, and Instagram at a fraction of traditional production cost.</p>
+    <div class="hero-stats">
+      <div class="h-stat"><div class="h-stat-num green">540K+</div><div class="h-stat-lbl">Total Monthly Reach</div></div>
+      <div class="h-stat"><div class="h-stat-num cream">3</div><div class="h-stat-lbl">Active Channels</div></div>
+      <div class="h-stat"><div class="h-stat-num cream">100</div><div class="h-stat-lbl">Max Variations / Shoot</div></div>
+      <div class="h-stat"><div class="h-stat-num cream">24/7</div><div class="h-stat-lbl">Content Pipeline</div></div>
+    </div>
+    <div class="hero-btns">
+      <a href="#cta" class="btn-white">Claim Free Proof Round →</a>
+      <a href="https://www.pinterest.com/nakedforeal" target="_blank" class="btn-outline-white">View Channels ↗</a>
+    </div>
+  </div>
+
+  <div class="stat-strip">
+    <div class="strip-stat"><div class="strip-num">470K+</div><div class="strip-lbl">Naked Foreal</div></div>
+    <div class="strip-stat"><div class="strip-num">70K+</div><div class="strip-lbl">Sole Foreal</div></div>
+    <div class="strip-stat"><div class="strip-num">500K</div><div class="strip-lbl">Beauty Reach</div></div>
+    <div class="strip-stat"><div class="strip-num">1M+</div><div class="strip-lbl">Top Video</div></div>
+  </div>
+
+  <div class="sec-lbl" id="channels">Active Channels</div>
+
+  <div class="channel-card ch-naked">
+    <div class="ch-inner-eyebrow">// Channel 01 · Fashion & Lifestyle</div>
+    <div class="ch-name">Naked Foreal</div>
+    <p class="ch-desc">Gen Z fashion and lifestyle. Our flagship Pinterest channel with strong organic reach and brand-safe content across fashion, style, and culture.</p>
+    <div class="ch-metric-row">
+      <div class="ch-metric"><div class="ch-metric-num">470K+</div><div class="ch-metric-lbl">Monthly Pinterest Views</div></div>
+      <div class="ch-metric"><div class="ch-metric-num">Gen Z</div><div class="ch-metric-lbl">Core Audience</div></div>
+    </div>
+    <div class="ch-tags">
+      <span class="ch-tag">Fashion</span>
+      <span class="ch-tag">Live</span>
+      <a href="https://www.pinterest.com/nakedforeal" target="_blank" class="ch-link ch-link-ora">
+        <svg width="10" height="10" viewBox="0 0 24 24" fill="currentColor"><path d="M12 0C5.373 0 0 5.373 0 12c0 5.084 3.163 9.426 7.627 11.174-.105-.949-.2-2.405.042-3.441.218-.937 1.407-5.965 1.407-5.965s-.359-.719-.359-1.782c0-1.668.967-2.914 2.171-2.914 1.023 0 1.518.769 1.518 1.69 0 1.029-.655 2.568-.994 3.995-.283 1.194.599 2.169 1.777 2.169 2.133 0 3.772-2.249 3.772-5.495 0-2.873-2.064-4.882-5.012-4.882-3.414 0-5.418 2.561-5.418 5.207 0 1.031.397 2.138.893 2.738a.36.36 0 0 1 .083.345l-.333 1.36c-.053.22-.174.267-.402.161-1.499-.698-2.436-2.889-2.436-4.649 0-3.785 2.75-7.262 7.929-7.262 4.163 0 7.398 2.967 7.398 6.931 0 4.136-2.607 7.464-6.227 7.464-1.216 0-2.359-.632-2.75-1.378l-.748 2.853c-.271 1.043-1.002 2.35-1.492 3.146C9.57 23.812 10.763 24 12 24c6.627 0 12-5.373 12-12S18.627 0 12 0z"/></svg>
+        View on Pinterest ↗
+      </a>
+    </div>
+  </div>
+
+  <div class="channel-card ch-sole">
+    <div class="ch-inner-eyebrow">// Channel 02 · Footwear</div>
+    <div class="ch-name">Sole Foreal</div>
+    <p class="ch-desc">Dedicated footwear channel on Pinterest — sneakers, lifestyle shoes, and footwear culture. Growing fast with a highly engaged niche audience.</p>
+    <div class="ch-metric-row">
+      <div class="ch-metric"><div class="ch-metric-num">70K+</div><div class="ch-metric-lbl">Monthly Pinterest Views</div></div>
+      <div class="ch-metric"><div class="ch-metric-num">↑ Fast</div><div class="ch-metric-lbl">Growth Trend</div></div>
+    </div>
+    <div class="ch-tags">
+      <span class="ch-tag">Footwear</span>
+      <span class="ch-tag">Growing</span>
+      <a href="https://www.pinterest.com/sole_foreal_sneakers/" target="_blank" class="ch-link ch-link-teal">
+        <svg width="10" height="10" viewBox="0 0 24 24" fill="currentColor"><path d="M12 0C5.373 0 0 5.373 0 12c0 5.084 3.163 9.426 7.627 11.174-.105-.949-.2-2.405.042-3.441.218-.937 1.407-5.965 1.407-5.965s-.359-.719-.359-1.782c0-1.668.967-2.914 2.171-2.914 1.023 0 1.518.769 1.518 1.69 0 1.029-.655 2.568-.994 3.995-.283 1.194.599 2.169 1.777 2.169 2.133 0 3.772-2.249 3.772-5.495 0-2.873-2.064-4.882-5.012-4.882-3.414 0-5.418 2.561-5.418 5.207 0 1.031.397 2.138.893 2.738a.36.36 0 0 1 .083.345l-.333 1.36c-.053.22-.174.267-.402.161-1.499-.698-2.436-2.889-2.436-4.649 0-3.785 2.75-7.262 7.929-7.262 4.163 0 7.398 2.967 7.398 6.931 0 4.136-2.607 7.464-6.227 7.464-1.216 0-2.359-.632-2.75-1.378l-.748 2.853c-.271 1.043-1.002 2.35-1.492 3.146C9.57 23.812 10.763 24 12 24c6.627 0 12-5.373 12-12S18.627 0 12 0z"/></svg>
+        View on Pinterest ↗
+      </a>
+    </div>
+  </div>
+
+  <div class="channel-card ch-beauty">
+    <div class="ch-inner-eyebrow">// Channel 03 · Beauty · Now Accepting Founding Brand Partners</div>
+    <div class="ch-name">Beauty Foreal</div>
+    <p class="ch-desc">Beauty channel anchored by an influencer with 500K followers across Instagram and TikTok — with videos already proven at over 1 million views. Founding brand partners get first-mover placement and dedicated creative priority.</p>
+    <div class="ch-metric-row">
+      <div class="ch-metric"><div class="ch-metric-num">500K</div><div class="ch-metric-lbl">Influencer Reach (IG + TikTok)</div></div>
+      <div class="ch-metric"><div class="ch-metric-num">1M+</div><div class="ch-metric-lbl">Top Video Views</div></div>
+    </div>
+    <div class="ch-tags">
+      <a href="https://www.tiktok.com/@dp_bautista12" target="_blank" class="ch-link ch-link-pur">
+        <svg width="10" height="10" viewBox="0 0 24 24" fill="currentColor"><path d="M19.59 6.69a4.83 4.83 0 01-3.77-4.25V2h-3.45v13.67a2.89 2.89 0 01-2.88 2.5 2.89 2.89 0 01-2.89-2.89 2.89 2.89 0 012.89-2.89c.28 0 .54.04.79.1V9.01a6.33 6.33 0 00-.79-.05 6.34 6.34 0 00-6.34 6.34 6.34 6.34 0 006.34 6.34 6.34 6.34 0 006.33-6.34V8.69a8.18 8.18 0 004.79 1.54V6.78a4.85 4.85 0 01-1.02-.09z"/></svg>
+        @dp_bautista12 ↗
+      </a>
+      <a href="https://www.instagram.com/drian_p_bautista?igsh=NTc4MTIwNjQ2YQ%3D%3D" target="_blank" class="ch-link ch-link-pur">
+        <svg width="10" height="10" viewBox="0 0 24 24" fill="currentColor"><path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zM12 0C8.741 0 8.333.014 7.053.072 2.695.272.273 2.69.073 7.052.014 8.333 0 8.741 0 12c0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98C8.333 23.986 8.741 24 12 24c3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98C15.668.014 15.259 0 12 0zm0 5.838a6.162 6.162 0 100 12.324 6.162 6.162 0 000-12.324zM12 16a4 4 0 110-8 4 4 0 010 8zm6.406-11.845a1.44 1.44 0 100 2.881 1.44 1.44 0 000-2.881z"/></svg>
+        @drian_p_bautista ↗
+      </a>
+      <span class="ch-tag" style="background:rgba(255,255,255,0.1);color:rgba(255,255,255,0.7);">Now Accepting Founding Partners</span>
+    </div>
+  </div>
+
+  <div class="sec-lbl">How It Works</div>
+  <div class="white-card">
+    <div class="wc-title">One Shoot. Infinite Output.</div>
+    <p class="wc-body">Most agencies reshoot for every platform. We don't. We ingest your brand assets — product photography, campaign footage, style guidelines — and run them through an AI pipeline trained on 470K+ real fashion and lifestyle pins. Every output is platform-native: the right ratio, the right caption style, the right hook for Pinterest vs. TikTok vs. Reels. Nothing is stock. Nothing is generic. It's your brand, multiplied.</p>
+    <ul class="feature-list">
+      <li><strong>Brand intake:</strong> We map your visual identity, tone, and target audience before touching a single asset</li>
+      <li><strong>Single shoot session:</strong> One production day — we handle creative direction, not just execution</li>
+      <li><strong>AI variation engine:</strong> Our pipeline trained on 470K+ fashion pins generates 50–100 platform-specific outputs — not templates, actual creative variations</li>
+      <li><strong>Format optimization:</strong> Pinterest vertical, TikTok 9:16, IG Reels, Stories — each one built for that feed, not cropped from a master</li>
+      <li><strong>Brand review before anything goes live:</strong> You approve every piece. No surprises.</li>
+      <li><strong>Monthly iteration:</strong> We track what performs and feed that data back into the next shoot</li>
+    </ul>
+  </div>
+
+  <div class="sec-lbl" id="tiers">Partnership Options</div>
+  <div class="tier-grid">
+    <div class="tier featured">
+      <div class="tier-badge">Start Here — No Risk</div>
+      <div class="tier-grid-inner">
+        <div>
+          <div class="tier-name">Free Proof Round</div>
+          <div class="tier-price">No Cost · No Commitment</div>
+          <ul class="tier-list">
+            <li>One production shoot session</li>
+            <li>10–15 AI-generated brand variations</li>
+            <li>Pinterest, TikTok, and IG formats</li>
+            <li>Full brand review before anything goes live</li>
+          </ul>
+        </div>
+        <div>
+          <ul class="tier-list" style="margin-top:0">
+            <li>See the exact output quality first</li>
+            <li>No contract, no obligation</li>
+            <li>Qualifying beauty, footwear & lifestyle brands</li>
+            <li>Results captured for your team to review</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+    <div class="tier">
+      <div class="tier-name">Ongoing Studio Partner</div>
+      <div class="tier-price">From $10K / Month</div>
+      <ul class="tier-list">
+        <li>Monthly shoot + 50–100 AI variations</li>
+        <li>Dedicated channel strategy</li>
+        <li>All-platform distribution</li>
+        <li>Monthly performance reporting</li>
+      </ul>
+    </div>
+    <div class="tier">
+      <div class="tier-name">Beauty Channel Launch</div>
+      <div class="tier-price">Custom Scope</div>
+      <ul class="tier-list">
+        <li>Beauty Foreal channel integration</li>
+        <li>500K influencer reach</li>
+        <li>Videos proven at 1M+ views</li>
+        <li>TikTok + IG content pipeline</li>
+      </ul>
+    </div>
+  </div>
+
+  <div class="cta-card" id="cta">
+    <div class="cta-txt">
+      <div class="cta-eyebrow">No Contract. No Risk. Free to Start.</div>
+      <div class="cta-h2">See the output<br>before you decide.</div>
+      <p class="cta-sub">Free proof round for select beauty, footwear, and lifestyle brands. One shoot. Real AI output. Judge it yourself.</p>
+    </div>
+    <div class="cta-actions">
+      <a href="mailto:hello@783labs.com" class="btn-ora">Claim Free Round →</a>
+      <a href="https://783labs.vercel.app" target="_blank" class="btn-ghost-dark">About 783 Labs ↗</a>
+    </div>
+  </div>
+
+  <footer>
+    <div class="footer-left">
+      <span class="footer-badge">783 Labs</span>
+      <span class="footer-name">Naked Foreal</span>
+      <span class="footer-sep">/</span>
+      <span class="footer-sub">AI UGC Studio · LA</span>
+    </div>
+    <div class="footer-right">
+      <a href="https://783labs.vercel.app">783labs.vercel.app</a><br>
+      © 2026 783 Labs
+    </div>
+  </footer>
+</div>
+</body>
+</html>
