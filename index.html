@@ -54,7 +54,6 @@ header { padding: 20px 0 16px; display: flex; align-items: center; justify-conte
 .hero-card { background: var(--ora); border-radius: 16px; padding: 28px 24px; margin-bottom: 14px; animation: fadeUp .35s .1s ease both; }
 .hero-eyebrow { font-family: var(--mono); font-size: 9px; letter-spacing: 0.22em; text-transform: uppercase; color: rgba(255,255,255,0.65); margin-bottom: 10px; }
 .hero-h1 { font-family: var(--mono); font-size: clamp(30px, 7vw, 48px); font-weight: 500; line-height: 1; letter-spacing: -0.02em; color: #fff; text-transform: uppercase; margin-bottom: 14px; }
-.hero-body { font-size: 14px; font-weight: 300; color: rgba(255,255,255,0.82); line-height: 1.65; margin-bottom: 24px; max-width: 500px; }
 .hero-stats { display: grid; grid-template-columns: 1fr 1fr; gap: 10px; margin-bottom: 22px; }
 .h-stat-num { font-size: 36px; font-weight: 700; color: #fff; letter-spacing: -0.02em; line-height: 1; margin-bottom: 3px; }
 .h-stat-num.green { color: var(--green-lt); }
@@ -156,6 +155,7 @@ footer { padding-top: 20px; border-top: 1px solid var(--border); display: flex; 
 </head>
 <body>
 <div class="wrap">
+
   <header>
     <div class="logo-row">
       <div class="logo-badge"><span>NF</span></div>
@@ -175,7 +175,9 @@ footer { padding-top: 20px; border-top: 1px solid var(--border); display: flex; 
   <div class="hero-card">
     <div class="hero-eyebrow">// 783labs.com — Content Studio · Los Angeles</div>
     <div class="hero-h1">Turn One Shoot Into<br>50–100 Pieces</div>
-    <p class="hero-body">We use AI to multiply a single shoot into platform-ready content — not generated from scratch, but built from your real brand assets. The result is 50–100 on-brand pieces per shoot, distributed across Pinterest, TikTok, and Instagram at a fraction of traditional production cost.</p>
+    <div style="background:rgba(0,0,0,0.15);border-radius:8px;padding:10px 14px;margin-bottom:16px;font-family:'DM Mono',monospace;font-size:10px;letter-spacing:0.12em;color:rgba(255,255,255,0.9);line-height:1.6;">
+      We take your real brand assets — photos, footage, guidelines — and use AI to multiply them into platform-ready content. Not generated from scratch. Not stock. Your brand, scaled.
+    </div>
     <div class="hero-stats">
       <div class="h-stat"><div class="h-stat-num green">540K+</div><div class="h-stat-lbl">Total Monthly Reach</div></div>
       <div class="h-stat"><div class="h-stat-num cream">3</div><div class="h-stat-lbl">Active Channels</div></div>
@@ -234,9 +236,9 @@ footer { padding-top: 20px; border-top: 1px solid var(--border); display: flex; 
   </div>
 
   <div class="channel-card ch-beauty">
-    <div class="ch-inner-eyebrow">// Channel 03 · Beauty · Now Accepting Founding Brand Partners</div>
+    <div class="ch-inner-eyebrow">// Channel 03 · Beauty · Founding Brand Partners</div>
     <div class="ch-name">Beauty Foreal</div>
-    <p class="ch-desc">Beauty channel anchored by an influencer with 500K followers across Instagram and TikTok — with videos already proven at over 1 million views. Founding brand partners get first-mover placement and dedicated creative priority.</p>
+    <p class="ch-desc">Beauty channel anchored by an influencer with 500K followers across Instagram and TikTok — with videos already proven at over 1 million views. First brand partners get priority placement and dedicated creative bandwidth.</p>
     <div class="ch-metric-row">
       <div class="ch-metric"><div class="ch-metric-num">500K</div><div class="ch-metric-lbl">Influencer Reach (IG + TikTok)</div></div>
       <div class="ch-metric"><div class="ch-metric-num">1M+</div><div class="ch-metric-lbl">Top Video Views</div></div>
@@ -250,52 +252,58 @@ footer { padding-top: 20px; border-top: 1px solid var(--border); display: flex; 
         <svg width="10" height="10" viewBox="0 0 24 24" fill="currentColor"><path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zM12 0C8.741 0 8.333.014 7.053.072 2.695.272.273 2.69.073 7.052.014 8.333 0 8.741 0 12c0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98C8.333 23.986 8.741 24 12 24c3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98C15.668.014 15.259 0 12 0zm0 5.838a6.162 6.162 0 100 12.324 6.162 6.162 0 000-12.324zM12 16a4 4 0 110-8 4 4 0 010 8zm6.406-11.845a1.44 1.44 0 100 2.881 1.44 1.44 0 000-2.881z"/></svg>
         @drian_p_bautista ↗
       </a>
-      <span class="ch-tag" style="background:rgba(255,255,255,0.1);color:rgba(255,255,255,0.7);">Now Accepting Founding Partners</span>
+      <span class="ch-tag" style="background:rgba(255,255,255,0.1);color:rgba(255,255,255,0.7);">Founding Brand Partners</span>
     </div>
   </div>
 
   <div class="sec-lbl">How It Works</div>
   <div class="white-card">
-    <div class="wc-title">One Shoot. Infinite Output.</div>
-    <p class="wc-body">Most agencies reshoot for every platform. We don't. We ingest your brand assets — product photography, campaign footage, style guidelines — and run them through an AI pipeline trained on 470K+ real fashion and lifestyle pins. Every output is platform-native: the right ratio, the right caption style, the right hook for Pinterest vs. TikTok vs. Reels. Nothing is stock. Nothing is generic. It's your brand, multiplied.</p>
+    <div class="wc-title">Our Pipeline. Not an Agency Model.</div>
+    <p class="wc-body">Most content agencies give you a mood board and a shoot day. We give you a system. Here's what actually happens:</p>
     <ul class="feature-list">
-      <li><strong>Brand intake:</strong> We map your visual identity, tone, and target audience before touching a single asset</li>
-      <li><strong>Single shoot session:</strong> One production day — we handle creative direction, not just execution</li>
-      <li><strong>AI variation engine:</strong> Our pipeline trained on 470K+ fashion pins generates 50–100 platform-specific outputs — not templates, actual creative variations</li>
-      <li><strong>Format optimization:</strong> Pinterest vertical, TikTok 9:16, IG Reels, Stories — each one built for that feed, not cropped from a master</li>
-      <li><strong>Brand review before anything goes live:</strong> You approve every piece. No surprises.</li>
-      <li><strong>Monthly iteration:</strong> We track what performs and feed that data back into the next shoot</li>
+      <li><strong>Brand asset intake:</strong> We pull your existing photos, product shots, campaign footage, and brand guidelines. No new assets required to start.</li>
+      <li><strong>AI variation engine:</strong> We run your assets through a pipeline built on 470K+ real fashion and lifestyle pins — not stock imagery. It understands what actually performs on each platform.</li>
+      <li><strong>Platform-native formatting:</strong> Pinterest vertical, TikTok 9:16, IG Reels, Stories — each piece is built for that specific feed. Nothing is cropped from a master file.</li>
+      <li><strong>You approve everything:</strong> We send you the full batch before a single piece goes live. No surprises, no off-brand moments.</li>
+      <li><strong>Performance loop:</strong> Every month we pull what's working, feed it back into the next batch, and improve the output. It compounds.</li>
     </ul>
+  </div>
+
+  <div class="white-card" style="border-left:3px solid var(--ora);">
+    <div class="wc-title" style="font-size:14px;">Currently Accepting Proof Round Partners</div>
+    <p class="wc-body">We're building our first cohort of brand case studies. <strong>Proof round partners get the full studio experience at zero cost</strong> — and their results become our first public case studies. If you're a beauty, footwear, or lifestyle brand and want to be first, this is the window.</p>
   </div>
 
   <div class="sec-lbl" id="tiers">Partnership Options</div>
   <div class="tier-grid">
+
     <div class="tier featured">
-      <div class="tier-badge">Start Here — No Risk</div>
+      <div class="tier-badge">Start Here — Zero Risk</div>
       <div class="tier-grid-inner">
         <div>
           <div class="tier-name">Free Proof Round</div>
-          <div class="tier-price">No Cost · No Commitment</div>
+          <div class="tier-price">No Cost · No Commitment · No Contract</div>
           <ul class="tier-list">
-            <li>One production shoot session</li>
-            <li>10–15 AI-generated brand variations</li>
-            <li>Pinterest, TikTok, and IG formats</li>
-            <li>Full brand review before anything goes live</li>
+            <li>We use your existing brand assets — no new shoot required</li>
+            <li>AI generates 10–15 real content variations for your brand</li>
+            <li>Pinterest, TikTok, and IG formats included</li>
+            <li>You review and approve before anything goes live</li>
           </ul>
         </div>
         <div>
           <ul class="tier-list" style="margin-top:0">
-            <li>See the exact output quality first</li>
-            <li>No contract, no obligation</li>
-            <li>Qualifying beauty, footwear & lifestyle brands</li>
-            <li>Results captured for your team to review</li>
+            <li>See exactly what 50–100 pieces would look like at scale</li>
+            <li>No obligation to continue after the round</li>
+            <li>Available to qualifying beauty, footwear & lifestyle brands</li>
+            <li>Your results feed our first public case studies</li>
           </ul>
         </div>
       </div>
     </div>
+
     <div class="tier">
       <div class="tier-name">Ongoing Studio Partner</div>
-      <div class="tier-price">From $10K / Month</div>
+      <div class="tier-price">Pricing discussed after proof round</div>
       <ul class="tier-list">
         <li>Monthly shoot + 50–100 AI variations</li>
         <li>Dedicated channel strategy</li>
@@ -303,9 +311,10 @@ footer { padding-top: 20px; border-top: 1px solid var(--border); display: flex; 
         <li>Monthly performance reporting</li>
       </ul>
     </div>
+
     <div class="tier">
       <div class="tier-name">Beauty Channel Launch</div>
-      <div class="tier-price">Custom Scope</div>
+      <div class="tier-price">Custom — let's talk</div>
       <ul class="tier-list">
         <li>Beauty Foreal channel integration</li>
         <li>500K influencer reach</li>
@@ -313,6 +322,7 @@ footer { padding-top: 20px; border-top: 1px solid var(--border); display: flex; 
         <li>TikTok + IG content pipeline</li>
       </ul>
     </div>
+
   </div>
 
   <div class="cta-card" id="cta">
@@ -339,6 +349,7 @@ footer { padding-top: 20px; border-top: 1px solid var(--border); display: flex; 
       © 2026 783 Labs
     </div>
   </footer>
+
 </div>
 </body>
 </html>
