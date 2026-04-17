@@ -1,0 +1,805 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Naked Foreal — One Shoot. 50–100 Platform Hits.</title>
+<meta name="description" content="The AI content studio that ships on your real brand assets — not prompts. 540K+ monthly reach. Free proof round for beauty, footwear, and lifestyle brands.">
+<meta property="og:title" content="Naked Foreal — One Shoot. 50–100 Platform Hits.">
+<meta property="og:description" content="We multiply your real brand assets into 50–100 platform-native pieces in 48 hours. Free proof round. No contract.">
+<meta property="og:url" content="https://naked-foreal.vercel.app">
+<meta property="og:type" content="website">
+<link rel="canonical" href="https://naked-foreal.vercel.app">
+<link href="https://fonts.googleapis.com/css2?family=DM+Sans:ital,wght@0,300;0,400;0,500;0,600;0,700;1,300&family=DM+Mono:wght@300;400;500&display=swap" rel="stylesheet">
+<style>
+:root {
+  --bg:       #F2F0EC;
+  --white:    #FFFFFF;
+  --ora:      #F26522;
+  --ora-lt:   rgba(242,101,34,0.1);
+  --ora-g:    rgba(242,101,34,0.25);
+  --teal:     #1A8FA0;
+  --teal-bg:  #0E6B7A;
+  --green-lt: #22c55e;
+  --purple:   #4C3B8A;
+  --text:     #1A1A1A;
+  --mid:      #4A4A4A;
+  --muted:    #6B7280;
+  --dim:      #9CA3AF;
+  --border:   #E0DDD8;
+  --f:        'DM Sans', sans-serif;
+  --mono:     'DM Mono', monospace;
+}
+
+*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+html { scroll-behavior: smooth; }
+body { background: var(--bg); color: var(--text); font-family: var(--f); -webkit-font-smoothing: antialiased; overflow-x: hidden; }
+
+/* ── STICKY CTA ── */
+.sticky-bar {
+  position: fixed;
+  bottom: 0; left: 0; right: 0;
+  z-index: 300;
+  background: var(--text);
+  border-top: 1px solid rgba(255,255,255,0.08);
+  padding: 12px 20px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 12px;
+  transform: translateY(100%);
+  transition: transform .35s ease;
+}
+.sticky-bar.visible { transform: translateY(0); }
+.sticky-bar-msg {
+  font-size: 13px;
+  font-weight: 500;
+  color: rgba(255,255,255,0.7);
+  white-space: nowrap;
+}
+.sticky-bar-msg span { color: var(--ora); }
+.sticky-btn {
+  font-family: var(--mono);
+  font-size: 10px;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  background: var(--ora);
+  color: #fff;
+  border: none;
+  padding: 10px 20px;
+  border-radius: 6px;
+  cursor: pointer;
+  text-decoration: none;
+  white-space: nowrap;
+  flex-shrink: 0;
+  transition: opacity .15s;
+}
+.sticky-btn:hover { opacity: .88; }
+
+/* ── WRAP ── */
+.wrap { max-width: 680px; margin: 0 auto; padding: 0 20px 100px; }
+
+/* ── HEADER ── */
+header {
+  padding: 20px 0 16px;
+  display: flex; align-items: center; justify-content: space-between;
+  gap: 12px; border-bottom: 1px solid var(--border); margin-bottom: 20px;
+  animation: fadeUp .4s ease both;
+}
+.logo-row { display: flex; align-items: center; gap: 12px; }
+.logo-badge { width: 44px; height: 44px; background: var(--ora); border-radius: 10px; display: flex; align-items: center; justify-content: center; flex-shrink: 0; }
+.logo-badge span { font-family: var(--mono); font-size: 13px; font-weight: 500; color: #fff; letter-spacing: 0.05em; }
+.logo-sup { font-size: 15px; font-weight: 700; color: var(--text); letter-spacing: -0.01em; line-height: 1.1; }
+.logo-sub { font-family: var(--mono); font-size: 10px; letter-spacing: 0.12em; color: var(--ora); text-transform: uppercase; line-height: 1; margin-top: 3px; }
+.header-sep { width: 1px; height: 32px; background: var(--border); flex-shrink: 0; }
+.header-title { font-size: 13px; color: var(--muted); font-weight: 400; line-height: 1.4; }
+.header-right { display: flex; flex-direction: column; align-items: flex-end; gap: 4px; flex-shrink: 0; }
+.date-lbl { font-family: var(--mono); font-size: 9px; letter-spacing: 0.15em; color: var(--dim); text-transform: uppercase; }
+.live-pill { display: inline-flex; align-items: center; gap: 6px; border: 1.5px solid var(--green-lt); border-radius: 20px; padding: 4px 12px; font-family: var(--mono); font-size: 10px; letter-spacing: 0.12em; color: var(--green-lt); }
+.live-dot { width: 6px; height: 6px; background: var(--green-lt); border-radius: 50%; box-shadow: 0 0 5px var(--green-lt); animation: pulse 1.8s infinite; }
+@keyframes pulse { 0%,100%{opacity:1} 50%{opacity:.3} }
+
+/* ── HERO CARD ── */
+.hero-card { background: var(--ora); border-radius: 16px; padding: 28px 24px; margin-bottom: 14px; animation: fadeUp .35s .1s ease both; }
+.hero-eyebrow { font-family: var(--mono); font-size: 9px; letter-spacing: 0.22em; text-transform: uppercase; color: rgba(255,255,255,0.6); margin-bottom: 10px; }
+.hero-h1 { font-family: var(--mono); font-size: clamp(28px, 6.5vw, 46px); font-weight: 500; line-height: 1.05; letter-spacing: -0.02em; color: #fff; text-transform: uppercase; margin-bottom: 14px; }
+.hero-explain {
+  background: rgba(0,0,0,0.18);
+  border-left: 3px solid rgba(255,255,255,0.4);
+  border-radius: 0 8px 8px 0;
+  padding: 12px 16px;
+  margin-bottom: 20px;
+  font-family: var(--mono);
+  font-size: 11px;
+  letter-spacing: 0.06em;
+  color: rgba(255,255,255,0.95);
+  line-height: 1.65;
+}
+.hero-explain strong { color: #fff; }
+.hero-stats { display: grid; grid-template-columns: 1fr 1fr; gap: 10px; margin-bottom: 20px; }
+.h-stat-num { font-size: 34px; font-weight: 700; color: #fff; letter-spacing: -0.02em; line-height: 1; margin-bottom: 3px; }
+.h-stat-num.green { color: var(--green-lt); }
+.h-stat-num.cream { color: rgba(255,255,255,0.9); }
+.h-stat-lbl { font-family: var(--mono); font-size: 9px; letter-spacing: 0.15em; color: rgba(255,255,255,0.55); text-transform: uppercase; }
+.hero-btns { display: flex; gap: 8px; flex-wrap: wrap; margin-bottom: 22px; }
+.btn-white { font-family: var(--mono); font-size: 10px; letter-spacing: 0.14em; text-transform: uppercase; background: #fff; color: var(--ora); border: none; padding: 11px 22px; border-radius: 8px; cursor: pointer; text-decoration: none; font-weight: 600; transition: opacity .15s; display: inline-block; }
+.btn-white:hover { opacity: .88; }
+.btn-outline-white { font-family: var(--mono); font-size: 10px; letter-spacing: 0.14em; text-transform: uppercase; background: transparent; color: rgba(255,255,255,0.8); border: 1.5px solid rgba(255,255,255,0.35); padding: 11px 22px; border-radius: 8px; cursor: pointer; text-decoration: none; transition: all .15s; display: inline-block; }
+.btn-outline-white:hover { border-color: #fff; color: #fff; }
+
+/* ── INLINE FORM ── */
+.hero-form { background: rgba(0,0,0,0.15); border-radius: 10px; padding: 14px 16px; }
+.hero-form-lbl { font-family: var(--mono); font-size: 9px; letter-spacing: 0.2em; color: rgba(255,255,255,0.6); text-transform: uppercase; margin-bottom: 8px; }
+.hero-form-row { display: flex; gap: 8px; }
+.hero-form-input {
+  flex: 1;
+  background: rgba(255,255,255,0.15);
+  border: 1px solid rgba(255,255,255,0.25);
+  border-radius: 7px;
+  padding: 10px 14px;
+  font-family: var(--f);
+  font-size: 13px;
+  color: #fff;
+  outline: none;
+}
+.hero-form-input::placeholder { color: rgba(255,255,255,0.45); }
+.hero-form-input:focus { border-color: rgba(255,255,255,0.6); }
+.hero-form-select {
+  background: rgba(255,255,255,0.15);
+  border: 1px solid rgba(255,255,255,0.25);
+  border-radius: 7px;
+  padding: 10px 12px;
+  font-family: var(--mono);
+  font-size: 10px;
+  color: rgba(255,255,255,0.85);
+  letter-spacing: 0.08em;
+  outline: none;
+  cursor: pointer;
+}
+.hero-form-select option { background: #333; color: #fff; }
+.hero-form-btn {
+  font-family: var(--mono);
+  font-size: 10px;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  background: #fff;
+  color: var(--ora);
+  border: none;
+  padding: 10px 18px;
+  border-radius: 7px;
+  cursor: pointer;
+  font-weight: 600;
+  white-space: nowrap;
+  transition: opacity .15s;
+}
+.hero-form-btn:hover { opacity: .88; }
+.hero-form-note { font-size: 10px; color: rgba(255,255,255,0.45); margin-top: 7px; font-family: var(--mono); letter-spacing: 0.08em; }
+
+/* ── STAT STRIP ── */
+.stat-strip { background: var(--white); border: 1px solid var(--border); border-radius: 14px; display: grid; grid-template-columns: repeat(4, 1fr); overflow: hidden; margin-bottom: 12px; animation: fadeUp .4s .2s ease both; }
+.strip-stat { padding: 16px 14px; border-right: 1px solid var(--border); text-align: center; }
+.strip-stat:last-child { border-right: none; }
+.strip-num { font-size: 22px; font-weight: 700; color: var(--text); letter-spacing: -0.02em; line-height: 1; margin-bottom: 3px; }
+.strip-lbl { font-family: var(--mono); font-size: 8px; letter-spacing: 0.12em; text-transform: uppercase; color: var(--muted); }
+
+/* ── VISUAL GRID ── */
+.visual-grid-card { background: var(--white); border: 1px solid var(--border); border-radius: 14px; padding: 22px; margin-bottom: 12px; animation: fadeUp .4s ease both; }
+.vg-title { font-size: 15px; font-weight: 700; color: var(--text); margin-bottom: 4px; }
+.vg-sub { font-size: 12px; color: var(--muted); margin-bottom: 16px; font-family: var(--mono); letter-spacing: 0.06em; }
+.vg-grid { display: grid; grid-template-columns: 1.2fr 1fr 1fr 1fr; gap: 8px; align-items: stretch; }
+.vg-source {
+  background: linear-gradient(160deg, #1a1a2e, #2d1b4e);
+  border-radius: 10px;
+  padding: 14px 12px;
+  display: flex; flex-direction: column; justify-content: space-between;
+  min-height: 130px;
+  position: relative;
+  overflow: hidden;
+}
+.vg-source::before {
+  content: '';
+  position: absolute;
+  top: 0; left: 0; right: 0; bottom: 0;
+  background: repeating-linear-gradient(45deg, rgba(255,255,255,0.02) 0px, rgba(255,255,255,0.02) 1px, transparent 1px, transparent 12px);
+}
+.vg-source-lbl { font-family: var(--mono); font-size: 8px; letter-spacing: 0.2em; color: rgba(255,255,255,0.4); text-transform: uppercase; }
+.vg-source-icon { font-size: 28px; text-align: center; margin: 10px 0; }
+.vg-source-tag { font-family: var(--mono); font-size: 8px; color: rgba(255,255,255,0.5); letter-spacing: 0.1em; }
+.vg-arrow { display: flex; align-items: center; justify-content: center; font-size: 18px; color: var(--ora); font-weight: 700; }
+.vg-output {
+  border-radius: 10px;
+  padding: 12px;
+  display: flex; flex-direction: column; justify-content: space-between;
+  min-height: 130px;
+}
+.vg-output.pinterest { background: linear-gradient(160deg, #ffeef0, #ffd6db); }
+.vg-output.tiktok    { background: linear-gradient(160deg, #e8f9ff, #ccf2fd); }
+.vg-output.ig        { background: linear-gradient(160deg, #fff3e8, #fde0c4); }
+.vg-out-platform { font-family: var(--mono); font-size: 7px; letter-spacing: 0.2em; text-transform: uppercase; font-weight: 600; }
+.vg-output.pinterest .vg-out-platform { color: #c0392b; }
+.vg-output.tiktok .vg-out-platform    { color: #0E6B7A; }
+.vg-output.ig .vg-out-platform        { color: var(--ora); }
+.vg-out-bar { height: 6px; background: rgba(0,0,0,0.1); border-radius: 3px; margin: 8px 0 4px; overflow: hidden; }
+.vg-out-fill { height: 100%; border-radius: 3px; }
+.vg-output.pinterest .vg-out-fill { background: #e74c3c; width: 85%; }
+.vg-output.tiktok .vg-out-fill    { background: var(--teal); width: 72%; }
+.vg-output.ig .vg-out-fill        { background: var(--ora); width: 68%; }
+.vg-out-label { font-family: var(--mono); font-size: 7px; color: rgba(0,0,0,0.4); letter-spacing: 0.1em; }
+.vg-watermark {
+  text-align: center;
+  margin-top: 10px;
+  font-family: var(--mono);
+  font-size: 8px;
+  color: var(--dim);
+  letter-spacing: 0.12em;
+}
+
+/* ── SEC LABEL ── */
+.sec-lbl { font-family: var(--mono); font-size: 9px; letter-spacing: 0.3em; text-transform: uppercase; color: var(--muted); margin: 24px 0 10px; display: flex; align-items: center; gap: 12px; }
+.sec-lbl::after { content: ''; flex: 1; height: 1px; background: var(--border); }
+
+/* ── CHANNEL CARDS ── */
+.channel-card { border-radius: 16px; padding: 26px 24px; margin-bottom: 12px; animation: fadeUp .4s ease both; }
+.ch-inner-eyebrow { font-family: var(--mono); font-size: 9px; letter-spacing: 0.22em; text-transform: uppercase; margin-bottom: 6px; }
+.ch-name { font-family: var(--mono); font-size: clamp(22px, 5vw, 32px); font-weight: 500; letter-spacing: -0.01em; text-transform: uppercase; line-height: 1.05; margin-bottom: 10px; }
+.ch-desc { font-size: 13px; font-weight: 300; line-height: 1.65; margin-bottom: 20px; max-width: 480px; }
+.ch-metric-row { display: grid; grid-template-columns: 1fr 1fr; gap: 10px; margin-bottom: 14px; }
+.ch-metric-num { font-size: 38px; font-weight: 700; letter-spacing: -0.03em; line-height: 1; margin-bottom: 3px; }
+.ch-metric-lbl { font-family: var(--mono); font-size: 8px; letter-spacing: 0.18em; text-transform: uppercase; }
+.ch-tags { display: flex; gap: 6px; flex-wrap: wrap; align-items: center; }
+.ch-tag { font-family: var(--mono); font-size: 8px; letter-spacing: 0.14em; text-transform: uppercase; padding: 4px 10px; border-radius: 6px; }
+.ch-link { font-family: var(--mono); font-size: 9px; letter-spacing: 0.12em; text-transform: uppercase; padding: 6px 14px; border-radius: 6px; text-decoration: none; display: inline-flex; align-items: center; gap: 5px; transition: opacity .15s; font-weight: 500; }
+.ch-link:hover { opacity: .8; }
+.ch-link-ora  { background: rgba(255,255,255,0.18); color: #fff; }
+.ch-link-teal { background: rgba(255,255,255,0.15); color: #fff; }
+.ch-link-pur  { background: rgba(255,255,255,0.15); color: #fff; }
+.ch-naked { background: var(--ora); }
+.ch-naked .ch-inner-eyebrow { color: rgba(255,255,255,0.55); }
+.ch-naked .ch-name { color: #fff; }
+.ch-naked .ch-desc { color: rgba(255,255,255,0.78); }
+.ch-naked .ch-metric-num { color: var(--green-lt); }
+.ch-naked .ch-metric-lbl { color: rgba(255,255,255,0.55); }
+.ch-naked .ch-tag { background: rgba(255,255,255,0.15); color: rgba(255,255,255,0.85); }
+.ch-sole { background: var(--teal-bg); }
+.ch-sole .ch-inner-eyebrow { color: rgba(255,255,255,0.5); }
+.ch-sole .ch-name { color: #fff; }
+.ch-sole .ch-desc { color: rgba(255,255,255,0.75); }
+.ch-sole .ch-metric-num { color: #5DE4F5; }
+.ch-sole .ch-metric-lbl { color: rgba(255,255,255,0.5); }
+.ch-sole .ch-tag { background: rgba(255,255,255,0.12); color: rgba(255,255,255,0.8); }
+.ch-beauty { background: var(--purple); }
+.ch-beauty .ch-inner-eyebrow { color: rgba(255,255,255,0.5); }
+.ch-beauty .ch-name { color: #fff; }
+.ch-beauty .ch-desc { color: rgba(255,255,255,0.75); }
+.ch-beauty .ch-metric-num { color: #C4B5FD; }
+.ch-beauty .ch-metric-lbl { color: rgba(255,255,255,0.5); }
+.ch-beauty .ch-tag { background: rgba(255,255,255,0.12); color: rgba(255,255,255,0.8); }
+
+/* ── BEAUTY SPOTLIGHT ── */
+.beauty-spotlight {
+  background: linear-gradient(135deg, #2d1b4e, #4C3B8A);
+  border-radius: 16px;
+  padding: 28px 24px;
+  margin-bottom: 12px;
+  border: 1px solid rgba(196,181,253,0.2);
+  animation: fadeUp .4s ease both;
+}
+.bs-eyebrow { font-family: var(--mono); font-size: 9px; letter-spacing: 0.25em; text-transform: uppercase; color: #C4B5FD; margin-bottom: 10px; }
+.bs-title { font-size: 20px; font-weight: 700; color: #fff; margin-bottom: 10px; letter-spacing: -0.01em; line-height: 1.2; }
+.bs-body { font-size: 13px; font-weight: 300; color: rgba(255,255,255,0.72); line-height: 1.7; margin-bottom: 20px; }
+.bs-body strong { color: #fff; font-weight: 500; }
+.bs-perks { display: grid; grid-template-columns: 1fr 1fr; gap: 8px; margin-bottom: 18px; }
+.bs-perk { background: rgba(255,255,255,0.07); border: 1px solid rgba(196,181,253,0.15); border-radius: 8px; padding: 12px 14px; font-size: 12px; color: rgba(255,255,255,0.75); line-height: 1.5; }
+.bs-perk strong { color: #C4B5FD; font-weight: 500; display: block; margin-bottom: 2px; font-family: var(--mono); font-size: 9px; letter-spacing: 0.15em; text-transform: uppercase; }
+.bs-spots { font-family: var(--mono); font-size: 10px; letter-spacing: 0.15em; color: #C4B5FD; text-transform: uppercase; }
+
+/* ── WHITE CARDS ── */
+.white-card { background: var(--white); border: 1px solid var(--border); border-radius: 14px; padding: 24px; margin-bottom: 12px; animation: fadeUp .4s ease both; }
+.wc-title { font-size: 17px; font-weight: 700; color: var(--text); letter-spacing: -0.01em; margin-bottom: 10px; }
+.wc-body { font-size: 13px; font-weight: 400; color: var(--mid); line-height: 1.75; }
+.wc-body strong { color: var(--text); font-weight: 600; }
+.feature-list { list-style: none; margin-top: 12px; display: flex; flex-direction: column; gap: 8px; }
+.feature-list li { display: flex; align-items: flex-start; gap: 9px; font-size: 13px; color: var(--mid); line-height: 1.5; }
+.feature-list li::before { content: '›'; color: var(--ora); font-size: 16px; line-height: 1.1; flex-shrink: 0; font-weight: 700; }
+
+/* ── INLINE FORM (white) ── */
+.form-card { background: var(--text); border-radius: 14px; padding: 24px; margin-bottom: 12px; animation: fadeUp .4s ease both; }
+.form-card-title { font-size: 16px; font-weight: 700; color: #fff; margin-bottom: 4px; }
+.form-card-sub { font-size: 12px; color: #8A9BB0; margin-bottom: 16px; font-family: var(--mono); letter-spacing: 0.06em; }
+.form-row { display: flex; gap: 8px; flex-wrap: wrap; }
+.form-input {
+  flex: 1; min-width: 180px;
+  background: rgba(255,255,255,0.07);
+  border: 1px solid rgba(255,255,255,0.12);
+  border-radius: 7px;
+  padding: 10px 14px;
+  font-family: var(--f);
+  font-size: 13px;
+  color: #fff;
+  outline: none;
+}
+.form-input::placeholder { color: rgba(255,255,255,0.3); }
+.form-input:focus { border-color: var(--ora); }
+.form-select {
+  background: rgba(255,255,255,0.07);
+  border: 1px solid rgba(255,255,255,0.12);
+  border-radius: 7px;
+  padding: 10px 12px;
+  font-family: var(--mono);
+  font-size: 10px;
+  letter-spacing: 0.08em;
+  color: rgba(255,255,255,0.7);
+  outline: none;
+  cursor: pointer;
+}
+.form-select option { background: #222; color: #fff; }
+.form-btn {
+  font-family: var(--mono);
+  font-size: 10px;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  background: var(--ora);
+  color: #fff;
+  border: none;
+  padding: 10px 20px;
+  border-radius: 7px;
+  cursor: pointer;
+  font-weight: 600;
+  transition: opacity .15s;
+  white-space: nowrap;
+}
+.form-btn:hover { opacity: .88; }
+.form-note { font-size: 10px; color: rgba(255,255,255,0.3); margin-top: 8px; font-family: var(--mono); letter-spacing: 0.08em; }
+
+/* ── TIERS ── */
+.tier-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 10px; margin-bottom: 12px; }
+.tier { background: var(--white); border: 1px solid var(--border); border-radius: 14px; padding: 22px 20px; position: relative; transition: border-color .2s; }
+.tier:hover { border-color: #ccc; }
+.tier.featured { border-color: var(--ora); background: linear-gradient(160deg, rgba(242,101,34,0.04), #fff); grid-column: 1 / -1; }
+.tier-badge { position: absolute; top: -11px; left: 50%; transform: translateX(-50%); background: var(--ora); color: #fff; font-family: var(--mono); font-size: 8px; letter-spacing: 0.2em; text-transform: uppercase; padding: 3px 14px; border-radius: 20px; white-space: nowrap; }
+.tier-name { font-size: 16px; font-weight: 700; color: var(--text); margin-bottom: 4px; }
+.tier-price { font-family: var(--mono); font-size: 10px; letter-spacing: 0.12em; color: var(--ora); text-transform: uppercase; padding-bottom: 14px; margin-bottom: 14px; border-bottom: 1px solid var(--border); }
+.tier-list { list-style: none; display: flex; flex-direction: column; gap: 8px; }
+.tier-list li { font-size: 13px; color: var(--mid); padding-left: 15px; position: relative; line-height: 1.45; }
+.tier-list li::before { content: '›'; position: absolute; left: 0; color: var(--teal); font-size: 15px; font-weight: 700; }
+.tier.featured .tier-grid-inner { display: grid; grid-template-columns: 1fr 1fr; gap: 16px; }
+
+/* ── CTA CARD ── */
+.cta-card { background: var(--text); border-radius: 16px; padding: 28px 24px; margin-bottom: 12px; animation: fadeUp .4s .2s ease both; display: flex; justify-content: space-between; align-items: center; gap: 20px; }
+.cta-eyebrow { font-family: var(--mono); font-size: 9px; letter-spacing: 0.25em; text-transform: uppercase; color: var(--ora); margin-bottom: 8px; }
+.cta-h2 { font-size: 22px; font-weight: 700; color: #fff; letter-spacing: -0.02em; margin-bottom: 8px; line-height: 1.2; }
+.cta-sub { font-size: 13px; font-weight: 300; color: #8A9BB0; max-width: 360px; line-height: 1.65; }
+.cta-actions { display: flex; flex-direction: column; gap: 8px; flex-shrink: 0; }
+.btn-ora { font-family: var(--mono); font-size: 10px; letter-spacing: 0.14em; text-transform: uppercase; background: var(--ora); color: #fff; border: none; padding: 12px 22px; border-radius: 8px; cursor: pointer; text-decoration: none; display: inline-block; transition: opacity .15s; text-align: center; }
+.btn-ora:hover { opacity: .88; }
+.btn-ghost-dark { font-family: var(--mono); font-size: 10px; letter-spacing: 0.14em; text-transform: uppercase; background: transparent; color: #8A9BB0; border: 1px solid rgba(255,255,255,0.12); padding: 12px 22px; border-radius: 8px; cursor: pointer; text-decoration: none; display: inline-block; transition: all .15s; text-align: center; }
+.btn-ghost-dark:hover { border-color: rgba(255,255,255,0.35); color: #ddd; }
+
+/* ── FOOTER ── */
+footer { padding-top: 20px; border-top: 1px solid var(--border); display: flex; justify-content: space-between; align-items: center; animation: fadeUp .4s ease both; }
+.footer-left { display: flex; align-items: center; gap: 10px; }
+.footer-badge { background: var(--ora); color: #fff; font-family: var(--mono); font-size: 8px; letter-spacing: 0.15em; padding: 3px 8px; border-radius: 4px; text-transform: uppercase; }
+.footer-name { font-weight: 700; font-size: 13px; color: var(--text); }
+.footer-sep { color: var(--dim); }
+.footer-sub { font-size: 12px; color: var(--muted); }
+.footer-right { font-family: var(--mono); font-size: 9px; letter-spacing: 0.12em; color: var(--dim); text-align: right; line-height: 1.8; text-transform: uppercase; }
+.footer-right a { color: var(--teal); text-decoration: none; }
+
+/* ── ANIMATION ── */
+@keyframes fadeUp { from { opacity: 0; transform: translateY(10px); } to { opacity: 1; transform: none; } }
+
+/* ── RESPONSIVE ── */
+@media (max-width: 680px) {
+  /* Hero — stack vertically, show image on top */
+  .hero-two-col { grid-template-columns: 1fr !important; }
+  .hero-two-col > div:last-child { 
+    border-radius: 0 !important; 
+    height: 200px; 
+    order: -1;
+  }
+  .hero-two-col > div:last-child img { border-radius: 0 !important; }
+  .hero-card { padding: 0 !important; }
+  .hero-h1 { font-size: 28px !important; }
+  .hero-explain { font-size: 10px !important; }
+  .hero-stats { grid-template-columns: 1fr 1fr !important; }
+  .hero-form-row { flex-wrap: wrap; gap: 6px; }
+  .hero-form-input { min-width: 100%; }
+  .hero-form-select { flex: 1; }
+  .hero-form-btn { flex: 1; }
+
+  /* Stat strip */
+  .stat-strip { grid-template-columns: 1fr 1fr; }
+  .strip-stat:nth-child(2) { border-right: none; }
+
+  /* Visual proof grid */
+  .vg-grid { grid-template-columns: 1fr 1fr; }
+  .vg-source { display: none; }
+  .vg-arrow { display: none; }
+
+  /* Real pin section */
+  .pin-proof-grid { grid-template-columns: 1fr !important; }
+
+  /* Tiers */
+  .tier-grid { grid-template-columns: 1fr; }
+  .tier.featured .tier-grid-inner { grid-template-columns: 1fr; }
+
+  /* Beauty spotlight */
+  .bs-perks { grid-template-columns: 1fr; }
+
+  /* CTA */
+  .cta-card { flex-direction: column; }
+  .cta-actions { width: 100%; }
+  .btn-ora, .btn-ghost-dark { width: 100%; text-align: center; }
+
+  /* Mid form */
+  .form-row { flex-direction: column; }
+  .form-input, .form-select, .form-btn { width: 100%; }
+
+  /* Header */
+  .header-title { display: none; }
+  .header-sep { display: none; }
+
+  /* Sticky bar */
+  .sticky-bar-msg { display: none; }
+  .sticky-btn { width: 100%; text-align: center; }
+  .sticky-bar { padding: 10px 16px; }
+
+  /* Footer */
+  footer { flex-direction: column; gap: 12px; }
+  .footer-right { text-align: center; }
+  .footer-left { flex-wrap: wrap; justify-content: center; }
+
+  /* Channels */
+  .ch-metric-num { font-size: 30px !important; }
+  .channel-card { padding: 20px 18px; }
+}
+</style>
+</head>
+<body>
+
+<!-- ── STICKY BAR ── -->
+<div class="sticky-bar" id="stickyBar">
+  <div class="sticky-bar-msg">Free proof round — <span>no contract, no cost</span></div>
+  <a href="#apply" class="sticky-btn">Apply Now →</a>
+</div>
+
+<div class="wrap">
+
+  <!-- ── HEADER ── -->
+  <header>
+    <div class="logo-row">
+      <div class="logo-badge"><span>NF</span></div>
+      <div class="logo-text">
+        <div class="logo-sup">Naked Foreal</div>
+        <div class="logo-sub">Content Studio</div>
+      </div>
+    </div>
+    <div class="header-sep"></div>
+    <div class="header-title">Brand Partnership<br>Overview</div>
+    <div class="header-right">
+      <div class="date-lbl">2026</div>
+      <div class="live-pill"><div class="live-dot"></div>Live</div>
+    </div>
+  </header>
+
+  <!-- ── HERO ── -->
+  <div class="hero-card" style="padding:0;overflow:hidden;">
+    <div class="hero-two-col" style="display:grid;grid-template-columns:1fr 1fr;min-height:420px;">
+      <!-- LEFT: copy -->
+      <div style="padding:28px 24px;display:flex;flex-direction:column;justify-content:space-between;">
+        <div>
+          <div class="hero-eyebrow">// 783labs.com — Los Angeles · Fashion · Footwear · Beauty</div>
+          <div class="hero-h1">One Shoot.<br>50–100 Platform Hits.<br>Zero Extra Shoots.</div>
+          <div class="hero-explain">
+            <strong>Not AI slop. Not stock.</strong> We take your real brand assets and multiply them into platform-native content using AI trained on 470K+ real fashion pins. Traditional agencies give you 5–10 pieces in 2–4 weeks. We give you 50–100 in 48 hours.
+          </div>
+          <div class="hero-stats" style="margin-top:16px;">
+            <div class="h-stat"><div class="h-stat-num green">540K+</div><div class="h-stat-lbl">Monthly Reach</div></div>
+            <div class="h-stat"><div class="h-stat-num cream">48hrs</div><div class="h-stat-lbl">Delivery Time</div></div>
+            <div class="h-stat"><div class="h-stat-num cream">100</div><div class="h-stat-lbl">Pieces / Shoot</div></div>
+            <div class="h-stat"><div class="h-stat-num cream">3</div><div class="h-stat-lbl">Live Channels</div></div>
+          </div>
+        </div>
+        <div>
+          <div class="hero-btns" style="margin-bottom:16px;">
+            <a href="#apply" class="btn-white">Apply for Free Proof Round →</a>
+            <a href="https://www.pinterest.com/nakedforeal" target="_blank" class="btn-outline-white">View Channels ↗</a>
+          </div>
+        </div>
+      </div>
+      <!-- RIGHT: real content grid image -->
+      <div style="position:relative;overflow:hidden;border-radius:0 16px 16px 0;">
+        <img src="grid.png" style="width:100%;height:100%;object-fit:cover;object-position:center;display:block;" alt="Naked Foreal Pinterest content variations">
+        <div style="position:absolute;inset:0;background:linear-gradient(to right, rgba(242,101,34,0.35) 0%, transparent 40%);"></div>
+        <div style="position:absolute;bottom:14px;left:14px;right:14px;background:rgba(0,0,0,0.55);backdrop-filter:blur(8px);border-radius:8px;padding:10px 12px;">
+          <div style="font-family:'DM Mono',monospace;font-size:8px;letter-spacing:0.2em;text-transform:uppercase;color:rgba(255,255,255,0.55);margin-bottom:3px;">Live from Naked Foreal</div>
+          <div style="font-family:'DM Mono',monospace;font-size:11px;color:#fff;letter-spacing:0.05em;">This is what 50–100 variations looks like</div>
+        </div>
+      </div>
+    </div>
+    <!-- FORM at bottom -->
+    <div style="padding:0 24px 24px;">
+    <div class="hero-form" id="apply" style="margin-top:16px;">
+      <div class="hero-form-lbl">Apply for your free proof round — we reply in &lt;24h</div>
+      <div class="hero-form-row">
+        <input class="hero-form-input" type="text" placeholder="Brand name" id="heroName">
+        <select class="hero-form-select" id="heroCat">
+          <option value="">Category</option>
+          <option>Fashion</option>
+          <option>Footwear</option>
+          <option>Beauty</option>
+          <option>Lifestyle</option>
+          <option>Other</option>
+        </select>
+        <button class="hero-form-btn" onclick="submitHeroForm()">Apply →</button>
+      </div>
+      <div class="hero-form-note" id="heroMsg">No contract. No cost. We build the proof. You judge it.</div>
+    </div>
+    </div>
+  </div>
+
+  <!-- ── STAT STRIP ── -->
+  <div class="stat-strip">
+    <div class="strip-stat"><div class="strip-num">470K+</div><div class="strip-lbl">Naked Foreal</div></div>
+    <div class="strip-stat"><div class="strip-num">70K+</div><div class="strip-lbl">Sole Foreal</div></div>
+    <div class="strip-stat"><div class="strip-num">500K</div><div class="strip-lbl">Beauty Reach</div></div>
+    <div class="strip-stat"><div class="strip-num">1M+</div><div class="strip-lbl">Top Video</div></div>
+  </div>
+
+  <!-- ── REAL PIN PROOF ── -->
+  <div class="visual-grid-card">
+    <div class="vg-title">Real Output. Real Numbers.</div>
+    <div class="vg-sub">Live Naked Foreal pin — organic reach with zero paid spend</div>
+    <div class="pin-proof-grid" style="display:grid;grid-template-columns:1fr 1fr;gap:16px;align-items:start;">
+      <div style="position:relative;border-radius:12px;overflow:hidden;box-shadow:0 4px 20px rgba(0,0,0,0.12);">
+        <img src="pin.png" style="width:100%;display:block;border-radius:12px;" alt="Naked Foreal Pinterest pin - 97K impressions">
+        <div style="position:absolute;top:10px;left:10px;background:rgba(230,0,35,0.9);color:#fff;font-family:'DM Mono',monospace;font-size:8px;letter-spacing:0.15em;text-transform:uppercase;padding:4px 9px;border-radius:4px;">📌 Pinterest</div>
+      </div>
+      <div style="display:flex;flex-direction:column;gap:10px;padding-top:4px;">
+        <div style="font-family:'DM Mono',monospace;font-size:9px;letter-spacing:0.2em;text-transform:uppercase;color:var(--muted);margin-bottom:4px;">Live pin stats</div>
+        <div style="background:var(--bg);border:1px solid var(--border);border-radius:10px;padding:16px 18px;">
+          <div style="font-size:28px;font-weight:700;color:var(--ora);letter-spacing:-0.02em;line-height:1;">97.1K</div>
+          <div style="font-family:'DM Mono',monospace;font-size:9px;letter-spacing:0.18em;text-transform:uppercase;color:var(--muted);margin-top:4px;">Impressions</div>
+        </div>
+        <div style="background:var(--bg);border:1px solid var(--border);border-radius:10px;padding:16px 18px;">
+          <div style="font-size:28px;font-weight:700;color:var(--text);letter-spacing:-0.02em;line-height:1;">3.63K</div>
+          <div style="font-family:'DM Mono',monospace;font-size:9px;letter-spacing:0.18em;text-transform:uppercase;color:var(--muted);margin-top:4px;">Pin Clicks</div>
+        </div>
+        <div style="background:var(--bg);border:1px solid var(--border);border-radius:10px;padding:16px 18px;">
+          <div style="font-size:28px;font-weight:700;color:var(--text);letter-spacing:-0.02em;line-height:1;">1.25K</div>
+          <div style="font-family:'DM Mono',monospace;font-size:9px;letter-spacing:0.18em;text-transform:uppercase;color:var(--muted);margin-top:4px;">Saves</div>
+        </div>
+        <div style="background:rgba(242,101,34,0.06);border:1px solid rgba(242,101,34,0.2);border-radius:10px;padding:14px 16px;">
+          <div style="font-size:12px;color:var(--mid);line-height:1.6;font-weight:300;">One pin. Zero paid spend. This is what we build for your brand — at 50–100 pieces per shoot.</div>
+        </div>
+      </div>
+    </div>
+    <div style="margin-top:14px;padding-top:14px;border-top:1px solid var(--border);font-family:'DM Mono',monospace;font-size:8px;letter-spacing:0.15em;color:var(--dim);text-transform:uppercase;">
+      Live Naked Foreal channel · organic only · no paid promotion
+    </div>
+  </div>
+
+  <!-- ── CHANNELS ── -->
+  <div class="sec-lbl" id="channels">Active Channels</div>
+
+  <div class="channel-card ch-naked">
+    <div class="ch-inner-eyebrow">// Channel 01 · Fashion & Lifestyle · Pinterest</div>
+    <div class="ch-name">Naked Foreal</div>
+    <p class="ch-desc">Our flagship Pinterest channel. Gen Z fashion and lifestyle with strong organic reach — 470K+ monthly views and growing. The distribution engine brands plug into.</p>
+    <div class="ch-metric-row">
+      <div class="ch-metric"><div class="ch-metric-num">470K+</div><div class="ch-metric-lbl">Monthly Pinterest Views</div></div>
+      <div class="ch-metric"><div class="ch-metric-num">Gen Z</div><div class="ch-metric-lbl">Core Audience</div></div>
+    </div>
+    <div class="ch-tags">
+      <span class="ch-tag">Fashion</span>
+      <span class="ch-tag">Live</span>
+      <a href="https://www.pinterest.com/nakedforeal" target="_blank" class="ch-link ch-link-ora">
+        <svg width="10" height="10" viewBox="0 0 24 24" fill="currentColor"><path d="M12 0C5.373 0 0 5.373 0 12c0 5.084 3.163 9.426 7.627 11.174-.105-.949-.2-2.405.042-3.441.218-.937 1.407-5.965 1.407-5.965s-.359-.719-.359-1.782c0-1.668.967-2.914 2.171-2.914 1.023 0 1.518.769 1.518 1.69 0 1.029-.655 2.568-.994 3.995-.283 1.194.599 2.169 1.777 2.169 2.133 0 3.772-2.249 3.772-5.495 0-2.873-2.064-4.882-5.012-4.882-3.414 0-5.418 2.561-5.418 5.207 0 1.031.397 2.138.893 2.738a.36.36 0 0 1 .083.345l-.333 1.36c-.053.22-.174.267-.402.161-1.499-.698-2.436-2.889-2.436-4.649 0-3.785 2.75-7.262 7.929-7.262 4.163 0 7.398 2.967 7.398 6.931 0 4.136-2.607 7.464-6.227 7.464-1.216 0-2.359-.632-2.75-1.378l-.748 2.853c-.271 1.043-1.002 2.35-1.492 3.146C9.57 23.812 10.763 24 12 24c6.627 0 12-5.373 12-12S18.627 0 12 0z"/></svg>
+        View on Pinterest ↗
+      </a>
+    </div>
+  </div>
+
+  <div class="channel-card ch-sole">
+    <div class="ch-inner-eyebrow">// Channel 02 · Footwear · Pinterest</div>
+    <div class="ch-name">Sole Foreal</div>
+    <p class="ch-desc">Dedicated sneaker and footwear channel on Pinterest. Fast-growing niche audience — highly engaged, purchase-intent driven. The right place for footwear brands who want reach that converts.</p>
+    <div class="ch-metric-row">
+      <div class="ch-metric"><div class="ch-metric-num">70K+</div><div class="ch-metric-lbl">Monthly Pinterest Views</div></div>
+      <div class="ch-metric"><div class="ch-metric-num">↑ Fast</div><div class="ch-metric-lbl">Growth Trend</div></div>
+    </div>
+    <div class="ch-tags">
+      <span class="ch-tag">Footwear</span>
+      <span class="ch-tag">Growing</span>
+      <a href="https://www.pinterest.com/sole_foreal_sneakers/" target="_blank" class="ch-link ch-link-teal">
+        <svg width="10" height="10" viewBox="0 0 24 24" fill="currentColor"><path d="M12 0C5.373 0 0 5.373 0 12c0 5.084 3.163 9.426 7.627 11.174-.105-.949-.2-2.405.042-3.441.218-.937 1.407-5.965 1.407-5.965s-.359-.719-.359-1.782c0-1.668.967-2.914 2.171-2.914 1.023 0 1.518.769 1.518 1.69 0 1.029-.655 2.568-.994 3.995-.283 1.194.599 2.169 1.777 2.169 2.133 0 3.772-2.249 3.772-5.495 0-2.873-2.064-4.882-5.012-4.882-3.414 0-5.418 2.561-5.418 5.207 0 1.031.397 2.138.893 2.738a.36.36 0 0 1 .083.345l-.333 1.36c-.053.22-.174.267-.402.161-1.499-.698-2.436-2.889-2.436-4.649 0-3.785 2.75-7.262 7.929-7.262 4.163 0 7.398 2.967 7.398 6.931 0 4.136-2.607 7.464-6.227 7.464-1.216 0-2.359-.632-2.75-1.378l-.748 2.853c-.271 1.043-1.002 2.35-1.492 3.146C9.57 23.812 10.763 24 12 24c6.627 0 12-5.373 12-12S18.627 0 12 0z"/></svg>
+        View on Pinterest ↗
+      </a>
+    </div>
+  </div>
+
+  <div class="channel-card ch-beauty">
+    <div class="ch-inner-eyebrow">// Channel 03 · Beauty · Pinterest Live · Affiliate Testing</div>
+    <div class="ch-name">Beauty Foreal</div>
+    <p class="ch-desc">Pinterest just launched in test mode. Affiliate marketing actively running. Anchored by <strong style="color:#C4B5FD;">@drian_p_bautista</strong> — 500K followers across IG and TikTok, with videos already crossing 1 million views. First beauty brands in get founding placement.</p>
+    <div class="ch-metric-row">
+      <div class="ch-metric"><div class="ch-metric-num">500K</div><div class="ch-metric-lbl">Influencer Reach (IG + TikTok)</div></div>
+      <div class="ch-metric"><div class="ch-metric-num">1M+</div><div class="ch-metric-lbl">Top Video Views</div></div>
+    </div>
+    <div class="ch-tags">
+      <a href="https://www.tiktok.com/@dp_bautista12" target="_blank" class="ch-link ch-link-pur">
+        <svg width="10" height="10" viewBox="0 0 24 24" fill="currentColor"><path d="M19.59 6.69a4.83 4.83 0 01-3.77-4.25V2h-3.45v13.67a2.89 2.89 0 01-2.88 2.5 2.89 2.89 0 01-2.89-2.89 2.89 2.89 0 012.89-2.89c.28 0 .54.04.79.1V9.01a6.33 6.33 0 00-.79-.05 6.34 6.34 0 00-6.34 6.34 6.34 6.34 0 006.34 6.34 6.34 6.34 0 006.33-6.34V8.69a8.18 8.18 0 004.79 1.54V6.78a4.85 4.85 0 01-1.02-.09z"/></svg>
+        @dp_bautista12 ↗
+      </a>
+      <a href="https://www.instagram.com/drian_p_bautista?igsh=NTc4MTIwNjQ2YQ%3D%3D" target="_blank" class="ch-link ch-link-pur">
+        <svg width="10" height="10" viewBox="0 0 24 24" fill="currentColor"><path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zM12 0C8.741 0 8.333.014 7.053.072 2.695.272.273 2.69.073 7.052.014 8.333 0 8.741 0 12c0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98C8.333 23.986 8.741 24 12 24c3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98C15.668.014 15.259 0 12 0zm0 5.838a6.162 6.162 0 100 12.324 6.162 6.162 0 000-12.324zM12 16a4 4 0 110-8 4 4 0 010 8zm6.406-11.845a1.44 1.44 0 100 2.881 1.44 1.44 0 000-2.881z"/></svg>
+        @drian_p_bautista ↗
+      </a>
+      <span class="ch-tag" style="background:rgba(255,255,255,0.1);color:rgba(255,255,255,0.7);">Founding Partners</span>
+      <span class="ch-tag" style="background:rgba(255,255,255,0.08);color:rgba(255,255,255,0.5);">Affiliate Live</span>
+    </div>
+  </div>
+
+  <!-- ── BEAUTY SPOTLIGHT ── -->
+  <div class="beauty-spotlight">
+    <div class="bs-eyebrow">✦ Founding Beauty Partners — First 5 Spots</div>
+    <div class="bs-title">Get in Before Beauty Foreal Scales</div>
+    <div class="bs-body">
+      We're taking on the first 5 founding beauty brand partners. You get <strong>co-created content with @drian_p_bautista</strong> (500K reach, 1M+ view videos), priority placement across the Beauty Foreal channel, and influencer seeding — before we open to the market. This window closes once we hit capacity.
+    </div>
+    <div class="bs-perks">
+      <div class="bs-perk"><strong>Priority Placement</strong>First position across all Beauty Foreal content</div>
+      <div class="bs-perk"><strong>Influencer Co-Creation</strong>Content featuring @drian_p_bautista directly</div>
+      <div class="bs-perk"><strong>Affiliate Integration</strong>Live affiliate pipeline — sales tracked from day one</div>
+      <div class="bs-perk"><strong>Case Study Status</strong>Your results become our first public beauty case study</div>
+    </div>
+    <div class="bs-spots">→ 5 founding spots · Apply below</div>
+  </div>
+
+  <!-- ── HOW IT WORKS ── -->
+  <div class="sec-lbl">How It Works</div>
+  <div class="white-card">
+    <div class="wc-title">4 Steps. 48 Hours. 50–100 Pieces.</div>
+    <p class="wc-body" style="margin-bottom:14px;">While traditional agencies take 2–4 weeks to produce 5–10 pieces, our AI pipeline runs on your real brand assets and delivers in 48 hours. Nothing is generated from scratch. Nothing is stock.</p>
+    <ul class="feature-list">
+      <li><strong>Step 1 — Send your assets:</strong> Existing product photos, campaign footage, brand guidelines. No new shoot required to get started.</li>
+      <li><strong>Step 2 — AI variation engine:</strong> We run your assets through a pipeline trained on 470K+ real fashion and lifestyle pins. It builds platform-native — Pinterest vertical, TikTok 9:16, IG Reels — not cropped from a master file.</li>
+      <li><strong>Step 3 — You approve in 48 hours:</strong> Full batch delivered. You review, request edits, approve. Nothing goes live without sign-off.</li>
+      <li><strong>Step 4 — Performance loop:</strong> Monthly we pull what's converting, feed it back in, and the output compounds every cycle.</li>
+    </ul>
+  </div>
+
+  <!-- ── MID-PAGE FORM ── -->
+  <div class="form-card" id="apply2">
+    <div class="form-card-title">Apply for Your Free Proof Round</div>
+    <div class="form-card-sub">Brand name + category → we reply in &lt;24h with next steps</div>
+    <div class="form-row">
+      <input class="form-input" type="text" placeholder="Your brand name" id="formName">
+      <select class="form-select" id="formCat">
+        <option value="">Category</option>
+        <option>Fashion</option>
+        <option>Footwear</option>
+        <option>Beauty</option>
+        <option>Lifestyle</option>
+        <option>Other</option>
+      </select>
+      <button class="form-btn" onclick="submitMidForm()">Apply →</button>
+    </div>
+    <div class="form-note" id="formMsg">No contract. No cost. No commitment. We build it — you judge it.</div>
+  </div>
+
+  <!-- ── TIERS ── -->
+  <div class="sec-lbl" id="tiers">Partnership Options</div>
+  <div class="tier-grid">
+    <div class="tier featured">
+      <div class="tier-badge">Start Here — Zero Risk</div>
+      <div class="tier-grid-inner">
+        <div>
+          <div class="tier-name">Free Proof Round</div>
+          <div class="tier-price">No Cost · No Commitment · No Contract</div>
+          <ul class="tier-list">
+            <li>We use your existing brand assets — no new shoot required</li>
+            <li>AI generates 10–15 real content variations for your brand</li>
+            <li>Pinterest, TikTok, and IG formats included</li>
+            <li>You review and approve before anything goes live</li>
+          </ul>
+        </div>
+        <div>
+          <ul class="tier-list" style="margin-top:0">
+            <li>See exactly what 50–100 pieces looks like at scale</li>
+            <li>No obligation after the round</li>
+            <li>Qualifying beauty, footwear &amp; lifestyle brands</li>
+            <li>Your results feed our first public case studies</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+    <div class="tier">
+      <div class="tier-name">Ongoing Studio Partner</div>
+      <div class="tier-price">Pricing after proof round</div>
+      <ul class="tier-list">
+        <li>Monthly 50–100 AI variations</li>
+        <li>Dedicated channel strategy</li>
+        <li>All-platform distribution</li>
+        <li>Monthly performance reporting</li>
+      </ul>
+    </div>
+    <div class="tier">
+      <div class="tier-name">Beauty Channel Launch</div>
+      <div class="tier-price">Custom — let's talk</div>
+      <ul class="tier-list">
+        <li>Beauty Foreal founding placement</li>
+        <li>500K influencer co-creation</li>
+        <li>Affiliate pipeline included</li>
+        <li>TikTok + IG + Pinterest</li>
+      </ul>
+    </div>
+  </div>
+
+  <!-- ── SOCIAL PROOF PLACEHOLDER ── -->
+  <div class="white-card" style="border-left:3px solid var(--ora);">
+    <div class="wc-title" style="font-size:14px;">First Cohort — Case Studies In Progress</div>
+    <p class="wc-body">We're building our first round of public brand results now. <strong>Proof round partners get the full studio experience at zero cost</strong> and their results become our first published case studies. The window is open. When it closes, it's waitlist only.</p>
+  </div>
+
+  <!-- ── CTA ── -->
+  <div class="cta-card" id="cta">
+    <div class="cta-txt">
+      <div class="cta-eyebrow">No Contract. No Risk. Free to Start.</div>
+      <div class="cta-h2">See the output<br>before you decide.</div>
+      <p class="cta-sub">Free proof round for beauty, footwear, and lifestyle brands. We build it. You judge it.</p>
+    </div>
+    <div class="cta-actions">
+      <a href="#apply2" class="btn-ora">Apply for Free Round →</a>
+      <a href="https://783labs.vercel.app" target="_blank" class="btn-ghost-dark">About 783 Labs ↗</a>
+    </div>
+  </div>
+
+  <!-- ── FOOTER ── -->
+  <footer>
+    <div class="footer-left">
+      <span class="footer-badge">783 Labs</span>
+      <span class="footer-name">Naked Foreal</span>
+      <span class="footer-sep">/</span>
+      <span class="footer-sub">Content Studio · LA</span>
+    </div>
+    <div class="footer-right">
+      <a href="https://783labs.vercel.app">783labs.vercel.app</a><br>
+      © 2026 783 Labs
+    </div>
+  </footer>
+
+</div>
+
+<script>
+// Sticky bar on scroll
+window.addEventListener('scroll', () => {
+  const bar = document.getElementById('stickyBar');
+  if (window.scrollY > 400) bar.classList.add('visible');
+  else bar.classList.remove('visible');
+});
+
+// Hero form submit
+function submitHeroForm() {
+  const name = document.getElementById('heroName').value.trim();
+  const cat  = document.getElementById('heroCat').value;
+  const msg  = document.getElementById('heroMsg');
+  if (!name || !cat) { msg.textContent = '← Enter your brand name and category to apply.'; msg.style.color = '#ffcc80'; return; }
+  window.location.href = `mailto:mneri2355@gmail.com?subject=Proof Round Application — ${name}&body=Brand: ${name}%0ACategory: ${cat}%0A%0AInterested in the free proof round.`;
+  msg.textContent = '✓ Opening your email — we reply within 24 hours.';
+  msg.style.color = '#22c55e';
+}
+
+// Mid-page form submit
+function submitMidForm() {
+  const name = document.getElementById('formName').value.trim();
+  const cat  = document.getElementById('formCat').value;
+  const msg  = document.getElementById('formMsg');
+  if (!name || !cat) { msg.textContent = '← Enter your brand name and category to apply.'; msg.style.color = '#f97316'; return; }
+  window.location.href = `mailto:mneri2355@gmail.com?subject=Proof Round Application — ${name}&body=Brand: ${name}%0ACategory: ${cat}%0A%0AInterested in the free proof round.`;
+  msg.textContent = '✓ Opening your email — we reply within 24 hours.';
+  msg.style.color = '#22c55e';
+}
+</script>
+</body>
+</html>
