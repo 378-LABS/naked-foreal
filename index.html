@@ -302,6 +302,56 @@ header {
 .feature-list li { display: flex; align-items: flex-start; gap: 9px; font-size: 13px; color: var(--mid); line-height: 1.5; }
 .feature-list li::before { content: '›'; color: var(--ora); font-size: 16px; line-height: 1.1; flex-shrink: 0; font-weight: 700; }
 
+/* ── HOW IT WORKS STEPS ── */
+.steps-card { background: var(--white); border: 1px solid var(--border); border-radius: 14px; overflow: hidden; margin-bottom: 12px; animation: fadeUp .4s ease both; }
+.steps-intro { padding: 24px 24px 20px; border-bottom: 1px solid var(--border); }
+.steps-intro-title { font-size: 20px; font-weight: 700; color: var(--text); letter-spacing: -0.02em; margin-bottom: 8px; }
+.steps-intro-body { font-size: 13px; color: var(--mid); line-height: 1.7; font-weight: 300; }
+.step-row {
+  display: grid;
+  grid-template-columns: 56px 1fr;
+  gap: 0;
+  border-bottom: 1px solid var(--border);
+  transition: background .15s;
+}
+.step-row:last-child { border-bottom: none; }
+.step-row:hover { background: rgba(242,101,34,0.02); }
+.step-num {
+  display: flex;
+  align-items: flex-start;
+  justify-content: center;
+  padding: 20px 0 20px;
+  border-right: 1px solid var(--border);
+}
+.step-num span {
+  font-family: var(--mono);
+  font-size: 11px;
+  font-weight: 500;
+  color: var(--ora);
+  background: var(--ora-lt);
+  width: 28px; height: 28px;
+  border-radius: 50%;
+  display: flex; align-items: center; justify-content: center;
+  letter-spacing: 0;
+  flex-shrink: 0;
+}
+.step-content { padding: 20px 20px; }
+.step-title { font-size: 14px; font-weight: 700; color: var(--text); margin-bottom: 4px; letter-spacing: -0.01em; }
+.step-body { font-size: 13px; color: var(--mid); line-height: 1.65; font-weight: 300; }
+.step-body strong { color: var(--text); font-weight: 600; }
+.step-tag {
+  display: inline-block;
+  margin-top: 8px;
+  font-family: var(--mono);
+  font-size: 8px;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+  color: var(--ora);
+  background: var(--ora-lt);
+  padding: 3px 9px;
+  border-radius: 4px;
+}
+
 /* ── INLINE FORM (white) ── */
 .form-card { background: var(--text); border-radius: 14px; padding: 24px; margin-bottom: 12px; animation: fadeUp .4s ease both; }
 .form-card-title { font-size: 16px; font-weight: 700; color: #fff; margin-bottom: 4px; }
@@ -619,7 +669,7 @@ footer { padding-top: 20px; border-top: 1px solid var(--border); display: flex; 
   </div>
 
   <div class="channel-card ch-beauty">
-    <div class="ch-inner-eyebrow">// Channel 03 · Beauty · Pinterest Live · Affiliate Testing</div>
+    <div class="ch-inner-eyebrow">// Channel 03 · Beauty · Now Accepting Founding Brand Partners</div>
     <div class="ch-name">Beauty Foreal</div>
     <p class="ch-desc">Pinterest just launched in test mode. Affiliate marketing actively running. Anchored by <strong style="color:#C4B5FD;">@drian_p_bautista</strong> — 500K followers across IG and TikTok, with videos already crossing 1 million views. First beauty brands in get founding placement.</p>
     <div class="ch-metric-row">
@@ -658,15 +708,43 @@ footer { padding-top: 20px; border-top: 1px solid var(--border); display: flex; 
 
   <!-- ── HOW IT WORKS ── -->
   <div class="sec-lbl">How It Works</div>
-  <div class="white-card">
-    <div class="wc-title">4 Steps. 48 Hours. 50–100 Pieces.</div>
-    <p class="wc-body" style="margin-bottom:14px;">While traditional agencies take 2–4 weeks to produce 5–10 pieces, our AI pipeline runs on your real brand assets and delivers in 48 hours. Nothing is generated from scratch. Nothing is stock.</p>
-    <ul class="feature-list">
-      <li><strong>Step 1 — Send your assets:</strong> Existing product photos, campaign footage, brand guidelines. No new shoot required to get started.</li>
-      <li><strong>Step 2 — AI variation engine:</strong> We run your assets through a pipeline trained on 470K+ real fashion and lifestyle pins. It builds platform-native — Pinterest vertical, TikTok 9:16, IG Reels — not cropped from a master file.</li>
-      <li><strong>Step 3 — You approve in 48 hours:</strong> Full batch delivered. You review, request edits, approve. Nothing goes live without sign-off.</li>
-      <li><strong>Step 4 — Performance loop:</strong> Monthly we pull what's converting, feed it back in, and the output compounds every cycle.</li>
-    </ul>
+  <div class="steps-card">
+    <div class="steps-intro">
+      <div class="steps-intro-title">4 Steps. 48 Hours. 50–100 Pieces.</div>
+      <p class="steps-intro-body">We take your real brand assets — photos, products, existing shoots — and use AI to multiply them into 50–100 platform-ready content pieces. Not generated from scratch. Built on what you already have, so every variation is on-brand and brand-safe.</p>
+    </div>
+    <div class="step-row">
+      <div class="step-num"><span>01</span></div>
+      <div class="step-content">
+        <div class="step-title">Brand Brief + Asset Audit</div>
+        <div class="step-body">We work from what you already have. No new shoot required.</div>
+        <span class="step-tag">No shoot needed</span>
+      </div>
+    </div>
+    <div class="step-row">
+      <div class="step-num"><span>02</span></div>
+      <div class="step-content">
+        <div class="step-title">AI Variation Engine</div>
+        <div class="step-body">Your assets go through a pipeline trained on <strong>470K+ real fashion pins</strong>. Output is platform-native — Pinterest vertical, TikTok 9:16, IG Reels — not cropped from a master file.</div>
+        <span class="step-tag">48-hour turnaround</span>
+      </div>
+    </div>
+    <div class="step-row">
+      <div class="step-num"><span>03</span></div>
+      <div class="step-content">
+        <div class="step-title">You Approve in 48 Hours</div>
+        <div class="step-body">Full batch delivered. Review, request edits, approve. <strong>Nothing goes live without your sign-off.</strong></div>
+        <span class="step-tag">Full brand control</span>
+      </div>
+    </div>
+    <div class="step-row">
+      <div class="step-num"><span>04</span></div>
+      <div class="step-content">
+        <div class="step-title">Performance Loop</div>
+        <div class="step-body">We track what lands and feed those signals back into the next batch. <strong>Every round gets smarter.</strong></div>
+        <span class="step-tag">Compounds monthly</span>
+      </div>
+    </div>
   </div>
 
   <!-- ── MID-PAGE FORM ── -->
