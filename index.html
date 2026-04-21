@@ -445,9 +445,8 @@ footer { padding-top: 20px; border-top: 1px solid var(--border); display: flex; 
 @media (max-width: 680px) {
   /* Hero stack */
   .hero-two-col { grid-template-columns: 1fr !important; }
-  .hero-two-col > div:last-child { display: none !important; }
-  .hero-img-desktop { display: none !important; }
-  .image-strip-outer { display: flex !important; }
+  .hero-two-col > div:last-child { border-radius: 0 !important; height: 240px; order: -1; overflow-x: auto; -webkit-overflow-scrolling: touch; }
+  .hero-two-col > div:last-child img { width: auto; height: 100%; max-width: none; display: block; border-radius: 0 !important; }
   .hero-card { padding: 0 !important; border-radius: 12px !important; }
   .hero-h1 { font-size: 22px !important; line-height: 1.05 !important; }
   .hero-explain { font-size: 11px !important; line-height: 1.6 !important; }
@@ -553,26 +552,6 @@ footer { padding-top: 20px; border-top: 1px solid var(--border); display: flex; 
   </header>
 
   <!-- ── HERO ── -->
-  <!-- MOBILE SCROLLING IMAGE STRIP -->
-  <div class="image-strip-outer" style="display:none;margin-bottom:12px;border-radius:14px;overflow:hidden;background:#0a0a0a;padding:10px 0;gap:5px;flex-direction:column;">
-    <div class="image-strip-wrap">
-      <div class="image-strip-track" style="animation:stripScroll 16s linear infinite;">
-        <div class="image-tile"><img src="grid.png" style="object-position:0% 16%;" alt=""></div><div class="image-tile"><img src="grid.png" style="object-position:11% 16%;" alt=""></div><div class="image-tile"><img src="grid.png" style="object-position:22% 16%;" alt=""></div><div class="image-tile"><img src="grid.png" style="object-position:33% 16%;" alt=""></div><div class="image-tile"><img src="grid.png" style="object-position:44% 16%;" alt=""></div><div class="image-tile"><img src="grid.png" style="object-position:56% 16%;" alt=""></div><div class="image-tile"><img src="grid.png" style="object-position:67% 16%;" alt=""></div><div class="image-tile"><img src="grid.png" style="object-position:78% 16%;" alt=""></div><div class="image-tile"><img src="grid.png" style="object-position:89% 16%;" alt=""></div><div class="image-tile"><img src="grid.png" style="object-position:100% 16%;" alt=""></div><div class="image-tile"><img src="grid.png" style="object-position:0% 16%;" alt=""></div><div class="image-tile"><img src="grid.png" style="object-position:11% 16%;" alt=""></div><div class="image-tile"><img src="grid.png" style="object-position:22% 16%;" alt=""></div><div class="image-tile"><img src="grid.png" style="object-position:33% 16%;" alt=""></div><div class="image-tile"><img src="grid.png" style="object-position:44% 16%;" alt=""></div><div class="image-tile"><img src="grid.png" style="object-position:56% 16%;" alt=""></div><div class="image-tile"><img src="grid.png" style="object-position:67% 16%;" alt=""></div><div class="image-tile"><img src="grid.png" style="object-position:78% 16%;" alt=""></div><div class="image-tile"><img src="grid.png" style="object-position:89% 16%;" alt=""></div><div class="image-tile"><img src="grid.png" style="object-position:100% 16%;" alt=""></div>
-      </div>
-    </div>
-    <div class="image-strip-wrap">
-      <div class="image-strip-track" style="animation:stripScrollReverse 20s linear infinite;">
-        <div class="image-tile"><img src="grid.png" style="object-position:0% 50%;" alt=""></div><div class="image-tile"><img src="grid.png" style="object-position:11% 50%;" alt=""></div><div class="image-tile"><img src="grid.png" style="object-position:22% 50%;" alt=""></div><div class="image-tile"><img src="grid.png" style="object-position:33% 50%;" alt=""></div><div class="image-tile"><img src="grid.png" style="object-position:44% 50%;" alt=""></div><div class="image-tile"><img src="grid.png" style="object-position:56% 50%;" alt=""></div><div class="image-tile"><img src="grid.png" style="object-position:67% 50%;" alt=""></div><div class="image-tile"><img src="grid.png" style="object-position:78% 50%;" alt=""></div><div class="image-tile"><img src="grid.png" style="object-position:89% 50%;" alt=""></div><div class="image-tile"><img src="grid.png" style="object-position:100% 50%;" alt=""></div><div class="image-tile"><img src="grid.png" style="object-position:0% 50%;" alt=""></div><div class="image-tile"><img src="grid.png" style="object-position:11% 50%;" alt=""></div><div class="image-tile"><img src="grid.png" style="object-position:22% 50%;" alt=""></div><div class="image-tile"><img src="grid.png" style="object-position:33% 50%;" alt=""></div><div class="image-tile"><img src="grid.png" style="object-position:44% 50%;" alt=""></div><div class="image-tile"><img src="grid.png" style="object-position:56% 50%;" alt=""></div><div class="image-tile"><img src="grid.png" style="object-position:67% 50%;" alt=""></div><div class="image-tile"><img src="grid.png" style="object-position:78% 50%;" alt=""></div><div class="image-tile"><img src="grid.png" style="object-position:89% 50%;" alt=""></div><div class="image-tile"><img src="grid.png" style="object-position:100% 50%;" alt=""></div>
-      </div>
-    </div>
-    <div class="image-strip-wrap">
-      <div class="image-strip-track" style="animation:stripScroll 18s linear infinite;">
-        <div class="image-tile"><img src="grid.png" style="object-position:0% 84%;" alt=""></div><div class="image-tile"><img src="grid.png" style="object-position:11% 84%;" alt=""></div><div class="image-tile"><img src="grid.png" style="object-position:22% 84%;" alt=""></div><div class="image-tile"><img src="grid.png" style="object-position:33% 84%;" alt=""></div><div class="image-tile"><img src="grid.png" style="object-position:44% 84%;" alt=""></div><div class="image-tile"><img src="grid.png" style="object-position:56% 84%;" alt=""></div><div class="image-tile"><img src="grid.png" style="object-position:67% 84%;" alt=""></div><div class="image-tile"><img src="grid.png" style="object-position:78% 84%;" alt=""></div><div class="image-tile"><img src="grid.png" style="object-position:89% 84%;" alt=""></div><div class="image-tile"><img src="grid.png" style="object-position:100% 84%;" alt=""></div><div class="image-tile"><img src="grid.png" style="object-position:0% 84%;" alt=""></div><div class="image-tile"><img src="grid.png" style="object-position:11% 84%;" alt=""></div><div class="image-tile"><img src="grid.png" style="object-position:22% 84%;" alt=""></div><div class="image-tile"><img src="grid.png" style="object-position:33% 84%;" alt=""></div><div class="image-tile"><img src="grid.png" style="object-position:44% 84%;" alt=""></div><div class="image-tile"><img src="grid.png" style="object-position:56% 84%;" alt=""></div><div class="image-tile"><img src="grid.png" style="object-position:67% 84%;" alt=""></div><div class="image-tile"><img src="grid.png" style="object-position:78% 84%;" alt=""></div><div class="image-tile"><img src="grid.png" style="object-position:89% 84%;" alt=""></div><div class="image-tile"><img src="grid.png" style="object-position:100% 84%;" alt=""></div>
-      </div>
-    </div>
-    <div style="text-align:center;padding:6px 0 2px;font-family:'DM Mono',monospace;font-size:8px;letter-spacing:0.2em;text-transform:uppercase;color:rgba(255,255,255,0.3);">Live from Naked Foreal &#183; 50&#8211;100 variations per shoot</div>
-  </div>
-
   <div class="hero-card" style="padding:0;overflow:hidden;">
     <div class="hero-two-col" style="display:grid;grid-template-columns:1fr 1fr;min-height:420px;">
       <div style="padding:28px 24px;display:flex;flex-direction:column;justify-content:space-between;">
@@ -596,8 +575,7 @@ footer { padding-top: 20px; border-top: 1px solid var(--border); display: flex; 
           </div>
         </div>
       </div>
-      <!-- DESKTOP: full image panel -->
-      <div class="hero-img-desktop" style="position:relative;overflow:hidden;border-radius:0 16px 16px 0;">
+      <div style="position:relative;overflow:hidden;border-radius:0 16px 16px 0;">
         <img src="grid.png" style="width:100%;height:100%;object-fit:cover;object-position:center;display:block;" alt="Naked Foreal Pinterest content variations">
         <div style="position:absolute;inset:0;background:linear-gradient(to right, rgba(242,101,34,0.35) 0%, transparent 40%);"></div>
         <div style="position:absolute;bottom:14px;left:14px;right:14px;background:rgba(0,0,0,0.55);backdrop-filter:blur(8px);border-radius:8px;padding:10px 12px;">
