@@ -176,7 +176,7 @@ header {
 .hero-form-note { font-size: 10px; color: rgba(255,255,255,0.45); margin-top: 7px; font-family: var(--mono); letter-spacing: 0.08em; }
 
 /* ── STAT STRIP ── */
-.stat-strip { background: var(--white); border: 1px solid var(--border); border-radius: 14px; display: grid; grid-template-columns: repeat(4, 1fr); overflow: hidden; margin-bottom: 12px; animation: fadeUp .4s .2s ease both; }
+.stat-strip { background: var(--white); border: 1px solid var(--border); border-radius: 14px; display: grid; grid-template-columns: repeat(5, 1fr); overflow: hidden; margin-bottom: 12px; animation: fadeUp .4s .2s ease both; }
 .strip-stat { padding: 16px 14px; border-right: 1px solid var(--border); text-align: center; }
 .strip-stat:last-child { border-right: none; }
 .strip-num { font-size: 22px; font-weight: 700; color: var(--text); letter-spacing: -0.02em; line-height: 1; margin-bottom: 3px; }
@@ -186,53 +186,7 @@ header {
 .visual-grid-card { background: var(--white); border: 1px solid var(--border); border-radius: 14px; padding: 22px; margin-bottom: 12px; animation: fadeUp .4s ease both; }
 .vg-title { font-size: 15px; font-weight: 700; color: var(--text); margin-bottom: 4px; }
 .vg-sub { font-size: 12px; color: var(--muted); margin-bottom: 16px; font-family: var(--mono); letter-spacing: 0.06em; }
-.vg-grid { display: grid; grid-template-columns: 1.2fr 1fr 1fr 1fr; gap: 8px; align-items: stretch; }
-.vg-source {
-  background: linear-gradient(160deg, #1a1a2e, #2d1b4e);
-  border-radius: 10px;
-  padding: 14px 12px;
-  display: flex; flex-direction: column; justify-content: space-between;
-  min-height: 130px;
-  position: relative;
-  overflow: hidden;
-}
-.vg-source::before {
-  content: '';
-  position: absolute;
-  top: 0; left: 0; right: 0; bottom: 0;
-  background: repeating-linear-gradient(45deg, rgba(255,255,255,0.02) 0px, rgba(255,255,255,0.02) 1px, transparent 1px, transparent 12px);
-}
-.vg-source-lbl { font-family: var(--mono); font-size: 8px; letter-spacing: 0.2em; color: rgba(255,255,255,0.4); text-transform: uppercase; }
-.vg-source-icon { font-size: 28px; text-align: center; margin: 10px 0; }
-.vg-source-tag { font-family: var(--mono); font-size: 8px; color: rgba(255,255,255,0.5); letter-spacing: 0.1em; }
-.vg-arrow { display: flex; align-items: center; justify-content: center; font-size: 18px; color: var(--ora); font-weight: 700; }
-.vg-output {
-  border-radius: 10px;
-  padding: 12px;
-  display: flex; flex-direction: column; justify-content: space-between;
-  min-height: 130px;
-}
-.vg-output.pinterest { background: linear-gradient(160deg, #ffeef0, #ffd6db); }
-.vg-output.tiktok    { background: linear-gradient(160deg, #e8f9ff, #ccf2fd); }
-.vg-output.ig        { background: linear-gradient(160deg, #fff3e8, #fde0c4); }
-.vg-out-platform { font-family: var(--mono); font-size: 7px; letter-spacing: 0.2em; text-transform: uppercase; font-weight: 600; }
-.vg-output.pinterest .vg-out-platform { color: #c0392b; }
-.vg-output.tiktok .vg-out-platform    { color: #0E6B7A; }
-.vg-output.ig .vg-out-platform        { color: var(--ora); }
-.vg-out-bar { height: 6px; background: rgba(0,0,0,0.1); border-radius: 3px; margin: 8px 0 4px; overflow: hidden; }
-.vg-out-fill { height: 100%; border-radius: 3px; }
-.vg-output.pinterest .vg-out-fill { background: #e74c3c; width: 85%; }
-.vg-output.tiktok .vg-out-fill    { background: var(--teal); width: 72%; }
-.vg-output.ig .vg-out-fill        { background: var(--ora); width: 68%; }
-.vg-out-label { font-family: var(--mono); font-size: 7px; color: rgba(0,0,0,0.4); letter-spacing: 0.1em; }
-.vg-watermark {
-  text-align: center;
-  margin-top: 10px;
-  font-family: var(--mono);
-  font-size: 8px;
-  color: var(--dim);
-  letter-spacing: 0.12em;
-}
+.vg-watermark { text-align: center; margin-top: 10px; font-family: var(--mono); font-size: 8px; color: var(--dim); letter-spacing: 0.12em; }
 
 /* ── SEC LABEL ── */
 .sec-lbl { font-family: var(--mono); font-size: 9px; letter-spacing: 0.3em; text-transform: uppercase; color: var(--muted); margin: 24px 0 10px; display: flex; align-items: center; gap: 12px; }
@@ -267,6 +221,13 @@ header {
 .ch-sole .ch-metric-num { color: #5DE4F5; }
 .ch-sole .ch-metric-lbl { color: rgba(255,255,255,0.5); }
 .ch-sole .ch-tag { background: rgba(255,255,255,0.12); color: rgba(255,255,255,0.8); }
+.ch-man { background: #1A1A2E; }
+.ch-man .ch-inner-eyebrow { color: rgba(255,255,255,0.5); }
+.ch-man .ch-name { color: #fff; }
+.ch-man .ch-desc { color: rgba(255,255,255,0.75); }
+.ch-man .ch-metric-num { color: var(--ora); }
+.ch-man .ch-metric-lbl { color: rgba(255,255,255,0.5); }
+.ch-man .ch-tag { background: rgba(255,255,255,0.1); color: rgba(255,255,255,0.75); }
 .ch-beauty { background: var(--purple); }
 .ch-beauty .ch-inner-eyebrow { color: rgba(255,255,255,0.5); }
 .ch-beauty .ch-name { color: #fff; }
@@ -307,97 +268,28 @@ header {
 .steps-intro { padding: 24px 24px 20px; border-bottom: 1px solid var(--border); }
 .steps-intro-title { font-size: 20px; font-weight: 700; color: var(--text); letter-spacing: -0.02em; margin-bottom: 8px; }
 .steps-intro-body { font-size: 13px; color: var(--mid); line-height: 1.7; font-weight: 300; }
-.step-row {
-  display: grid;
-  grid-template-columns: 56px 1fr;
-  gap: 0;
-  border-bottom: 1px solid var(--border);
-  transition: background .15s;
-}
+.step-row { display: grid; grid-template-columns: 56px 1fr; gap: 0; border-bottom: 1px solid var(--border); transition: background .15s; }
 .step-row:last-child { border-bottom: none; }
 .step-row:hover { background: rgba(242,101,34,0.02); }
-.step-num {
-  display: flex;
-  align-items: flex-start;
-  justify-content: center;
-  padding: 20px 0 20px;
-  border-right: 1px solid var(--border);
-}
-.step-num span {
-  font-family: var(--mono);
-  font-size: 11px;
-  font-weight: 500;
-  color: var(--ora);
-  background: var(--ora-lt);
-  width: 28px; height: 28px;
-  border-radius: 50%;
-  display: flex; align-items: center; justify-content: center;
-  letter-spacing: 0;
-  flex-shrink: 0;
-}
+.step-num { display: flex; align-items: flex-start; justify-content: center; padding: 20px 0 20px; border-right: 1px solid var(--border); }
+.step-num span { font-family: var(--mono); font-size: 11px; font-weight: 500; color: var(--ora); background: var(--ora-lt); width: 28px; height: 28px; border-radius: 50%; display: flex; align-items: center; justify-content: center; letter-spacing: 0; flex-shrink: 0; }
 .step-content { padding: 20px 20px; }
 .step-title { font-size: 14px; font-weight: 700; color: var(--text); margin-bottom: 4px; letter-spacing: -0.01em; }
 .step-body { font-size: 13px; color: var(--mid); line-height: 1.65; font-weight: 300; }
 .step-body strong { color: var(--text); font-weight: 600; }
-.step-tag {
-  display: inline-block;
-  margin-top: 8px;
-  font-family: var(--mono);
-  font-size: 8px;
-  letter-spacing: 0.18em;
-  text-transform: uppercase;
-  color: var(--ora);
-  background: var(--ora-lt);
-  padding: 3px 9px;
-  border-radius: 4px;
-}
+.step-tag { display: inline-block; margin-top: 8px; font-family: var(--mono); font-size: 8px; letter-spacing: 0.18em; text-transform: uppercase; color: var(--ora); background: var(--ora-lt); padding: 3px 9px; border-radius: 4px; }
 
-/* ── INLINE FORM (white) ── */
+/* ── INLINE FORM (dark) ── */
 .form-card { background: var(--text); border-radius: 14px; padding: 24px; margin-bottom: 12px; animation: fadeUp .4s ease both; }
 .form-card-title { font-size: 16px; font-weight: 700; color: #fff; margin-bottom: 4px; }
 .form-card-sub { font-size: 12px; color: #8A9BB0; margin-bottom: 16px; font-family: var(--mono); letter-spacing: 0.06em; }
 .form-row { display: flex; gap: 8px; flex-wrap: wrap; }
-.form-input {
-  flex: 1; min-width: 180px;
-  background: rgba(255,255,255,0.07);
-  border: 1px solid rgba(255,255,255,0.12);
-  border-radius: 7px;
-  padding: 10px 14px;
-  font-family: var(--f);
-  font-size: 13px;
-  color: #fff;
-  outline: none;
-}
+.form-input { flex: 1; min-width: 180px; background: rgba(255,255,255,0.07); border: 1px solid rgba(255,255,255,0.12); border-radius: 7px; padding: 10px 14px; font-family: var(--f); font-size: 13px; color: #fff; outline: none; }
 .form-input::placeholder { color: rgba(255,255,255,0.3); }
 .form-input:focus { border-color: var(--ora); }
-.form-select {
-  background: rgba(255,255,255,0.07);
-  border: 1px solid rgba(255,255,255,0.12);
-  border-radius: 7px;
-  padding: 10px 12px;
-  font-family: var(--mono);
-  font-size: 10px;
-  letter-spacing: 0.08em;
-  color: rgba(255,255,255,0.7);
-  outline: none;
-  cursor: pointer;
-}
+.form-select { background: rgba(255,255,255,0.07); border: 1px solid rgba(255,255,255,0.12); border-radius: 7px; padding: 10px 12px; font-family: var(--mono); font-size: 10px; letter-spacing: 0.08em; color: rgba(255,255,255,0.7); outline: none; cursor: pointer; }
 .form-select option { background: #222; color: #fff; }
-.form-btn {
-  font-family: var(--mono);
-  font-size: 10px;
-  letter-spacing: 0.14em;
-  text-transform: uppercase;
-  background: var(--ora);
-  color: #fff;
-  border: none;
-  padding: 10px 20px;
-  border-radius: 7px;
-  cursor: pointer;
-  font-weight: 600;
-  transition: opacity .15s;
-  white-space: nowrap;
-}
+.form-btn { font-family: var(--mono); font-size: 10px; letter-spacing: 0.14em; text-transform: uppercase; background: var(--ora); color: #fff; border: none; padding: 10px 20px; border-radius: 7px; cursor: pointer; font-weight: 600; transition: opacity .15s; white-space: nowrap; }
 .form-btn:hover { opacity: .88; }
 .form-note { font-size: 10px; color: rgba(255,255,255,0.3); margin-top: 8px; font-family: var(--mono); letter-spacing: 0.08em; }
 
@@ -440,13 +332,8 @@ footer { padding-top: 20px; border-top: 1px solid var(--border); display: flex; 
 
 /* ── RESPONSIVE ── */
 @media (max-width: 680px) {
-  /* Hero — stack vertically, show image on top */
   .hero-two-col { grid-template-columns: 1fr !important; }
-  .hero-two-col > div:last-child { 
-    border-radius: 0 !important; 
-    height: 220px; 
-    order: -1;
-  }
+  .hero-two-col > div:last-child { border-radius: 0 !important; height: 220px; order: -1; }
   .hero-two-col > div:last-child img { border-radius: 0 !important; }
   .hero-card { padding: 0 !important; }
   .hero-h1 { font-size: 24px !important; line-height: 1.05 !important; }
@@ -456,56 +343,30 @@ footer { padding-top: 20px; border-top: 1px solid var(--border); display: flex; 
   .hero-form-input { min-width: 100%; }
   .hero-form-select { flex: 1; }
   .hero-form-btn { flex: 1; }
-  /* Steps mobile */
   .step-row { grid-template-columns: 44px 1fr; }
   .step-num { padding: 16px 0; }
   .step-content { padding: 16px 14px; }
   .step-title { font-size: 13px; }
   .step-body { font-size: 12px; }
-
-  /* Stat strip */
-  .stat-strip { grid-template-columns: 1fr 1fr; }
-  .strip-stat:nth-child(2) { border-right: none; }
-
-  /* Visual proof grid */
-  .vg-grid { grid-template-columns: 1fr 1fr; }
-  .vg-source { display: none; }
-  .vg-arrow { display: none; }
-
-  /* Real pin section */
+  .stat-strip { grid-template-columns: 1fr 1fr 1fr !important; }
+  .strip-stat:nth-child(3) ~ .strip-stat { border-top: 1px solid var(--border); }
   .pin-proof-grid { grid-template-columns: 1fr !important; }
-
-  /* Tiers */
   .tier-grid { grid-template-columns: 1fr; }
   .tier.featured .tier-grid-inner { grid-template-columns: 1fr; }
-
-  /* Beauty spotlight */
   .bs-perks { grid-template-columns: 1fr; }
-
-  /* CTA */
   .cta-card { flex-direction: column; }
   .cta-actions { width: 100%; }
   .btn-ora, .btn-ghost-dark { width: 100%; text-align: center; }
-
-  /* Mid form */
   .form-row { flex-direction: column; }
   .form-input, .form-select, .form-btn { width: 100%; }
-
-  /* Header */
   .header-title { display: none; }
   .header-sep { display: none; }
-
-  /* Sticky bar */
   .sticky-bar-msg { display: none; }
   .sticky-btn { width: 100%; text-align: center; }
   .sticky-bar { padding: 10px 16px; }
-
-  /* Footer */
   footer { flex-direction: column; gap: 12px; }
   .footer-right { text-align: center; }
   .footer-left { flex-wrap: wrap; justify-content: center; }
-
-  /* Channels */
   .ch-metric-num { font-size: 30px !important; }
   .channel-card { padding: 20px 18px; }
 }
@@ -541,19 +402,18 @@ footer { padding-top: 20px; border-top: 1px solid var(--border); display: flex; 
   <!-- ── HERO ── -->
   <div class="hero-card" style="padding:0;overflow:hidden;">
     <div class="hero-two-col" style="display:grid;grid-template-columns:1fr 1fr;min-height:420px;">
-      <!-- LEFT: copy -->
       <div style="padding:28px 24px;display:flex;flex-direction:column;justify-content:space-between;">
         <div>
-          <div class="hero-eyebrow">// 783labs.com — Los Angeles · Fashion · Footwear · Beauty</div>
+          <div class="hero-eyebrow">// 783labs.com — Los Angeles · Fashion · Footwear · Men's · Beauty</div>
           <div class="hero-h1">ONE SHOOT.<br>50–100 PLATFORM HITS.<br>ZERO EXTRA SHOOTS.</div>
           <div class="hero-explain">
             We take your real brand assets and multiply them into native UGC using AI trained on <strong>500K+ real fashion pins</strong> from our own channels.<br><br>Not AI slop. Not stock. Agencies take 2–4 weeks to deliver 5–10 pieces. <strong>We deliver 50–100 pieces in 48 hours.</strong>
           </div>
           <div class="hero-stats" style="margin-top:16px;">
-            <div class="h-stat"><div class="h-stat-num green">540K+</div><div class="h-stat-lbl">Monthly Reach</div></div>
+            <div class="h-stat"><div class="h-stat-num green">1.6M+</div><div class="h-stat-lbl">Monthly Reach</div></div>
             <div class="h-stat"><div class="h-stat-num cream">48hrs</div><div class="h-stat-lbl">Delivery Time</div></div>
             <div class="h-stat"><div class="h-stat-num cream">100</div><div class="h-stat-lbl">Pieces / Shoot</div></div>
-            <div class="h-stat"><div class="h-stat-num cream">3</div><div class="h-stat-lbl">Live Channels</div></div>
+            <div class="h-stat"><div class="h-stat-num cream">4</div><div class="h-stat-lbl">Live Channels</div></div>
           </div>
         </div>
         <div>
@@ -563,41 +423,41 @@ footer { padding-top: 20px; border-top: 1px solid var(--border); display: flex; 
           </div>
         </div>
       </div>
-      <!-- RIGHT: real content grid image -->
       <div style="position:relative;overflow:hidden;border-radius:0 16px 16px 0;">
         <img src="grid.png" style="width:100%;height:100%;object-fit:cover;object-position:center;display:block;" alt="Naked Foreal Pinterest content variations">
         <div style="position:absolute;inset:0;background:linear-gradient(to right, rgba(242,101,34,0.35) 0%, transparent 40%);"></div>
         <div style="position:absolute;bottom:14px;left:14px;right:14px;background:rgba(0,0,0,0.55);backdrop-filter:blur(8px);border-radius:8px;padding:10px 12px;">
           <div style="font-family:'DM Mono',monospace;font-size:8px;letter-spacing:0.2em;text-transform:uppercase;color:rgba(255,255,255,0.55);margin-bottom:3px;">Live from Naked Foreal</div>
-          <div style="font-family:'DM Mono',monospace;font-size:11px;color:#fff;letter-spacing:0.05em;">LIVE FROM NAKED FOREAL — This is what 50–100 variations looks like</div>
+          <div style="font-family:'DM Mono',monospace;font-size:11px;color:#fff;letter-spacing:0.05em;">This is what 50–100 variations looks like</div>
         </div>
       </div>
     </div>
-    <!-- FORM at bottom -->
     <div style="padding:0 24px 24px;">
-    <div class="hero-form" id="apply" style="margin-top:16px;">
-      <div class="hero-form-lbl">Apply for your free proof round — we reply in &lt;24h</div>
-      <div class="hero-form-row">
-        <input class="hero-form-input" type="text" placeholder="Brand name" id="heroName">
-        <select class="hero-form-select" id="heroCat">
-          <option value="">Category</option>
-          <option>Fashion</option>
-          <option>Footwear</option>
-          <option>Beauty</option>
-          <option>Lifestyle</option>
-          <option>Other</option>
-        </select>
-        <button class="hero-form-btn" onclick="submitHeroForm()">Apply →</button>
+      <div class="hero-form" id="apply" style="margin-top:16px;">
+        <div class="hero-form-lbl">Apply for your free proof round — we reply in &lt;24h</div>
+        <div class="hero-form-row">
+          <input class="hero-form-input" type="text" placeholder="Brand name" id="heroName">
+          <select class="hero-form-select" id="heroCat">
+            <option value="">Category</option>
+            <option>Fashion</option>
+            <option>Footwear</option>
+            <option>Men's Fashion</option>
+            <option>Beauty</option>
+            <option>Lifestyle</option>
+            <option>Other</option>
+          </select>
+          <button class="hero-form-btn" onclick="submitHeroForm()">Apply →</button>
+        </div>
+        <div class="hero-form-note" id="heroMsg">No contract. No cost. We build the proof. You judge it.</div>
       </div>
-      <div class="hero-form-note" id="heroMsg">No contract. No cost. We build the proof. You judge it.</div>
-    </div>
     </div>
   </div>
 
   <!-- ── STAT STRIP ── -->
   <div class="stat-strip">
-    <div class="strip-stat"><div class="strip-num">470K+</div><div class="strip-lbl">Naked Foreal</div></div>
-    <div class="strip-stat"><div class="strip-num">70K+</div><div class="strip-lbl">Sole Foreal</div></div>
+    <div class="strip-stat"><div class="strip-num">550K+</div><div class="strip-lbl">Naked Foreal</div></div>
+    <div class="strip-stat"><div class="strip-num">80K+</div><div class="strip-lbl">Sole Foreal</div></div>
+    <div class="strip-stat"><div class="strip-num">1M+</div><div class="strip-lbl">Man Foreal</div></div>
     <div class="strip-stat"><div class="strip-num">500K</div><div class="strip-lbl">Beauty Reach</div></div>
     <div class="strip-stat"><div class="strip-num">1M+</div><div class="strip-lbl">Top Video</div></div>
   </div>
@@ -638,12 +498,13 @@ footer { padding-top: 20px; border-top: 1px solid var(--border); display: flex; 
   <!-- ── CHANNELS ── -->
   <div class="sec-lbl" id="channels">Active Channels</div>
 
+  <!-- Naked Foreal -->
   <div class="channel-card ch-naked">
-    <div class="ch-inner-eyebrow">// Channel 01 · Fashion & Lifestyle · Pinterest</div>
+    <div class="ch-inner-eyebrow">// Channel 01 · Fashion &amp; Lifestyle · Pinterest</div>
     <div class="ch-name">Naked Foreal</div>
-    <p class="ch-desc">Our flagship Pinterest channel. Gen Z fashion and lifestyle with strong organic reach — 470K+ monthly views and growing. The distribution engine brands plug into.</p>
+    <p class="ch-desc">Our flagship Pinterest channel. Gen Z fashion and lifestyle with strong organic reach — 550K+ monthly views and growing. The distribution engine brands plug into.</p>
     <div class="ch-metric-row">
-      <div class="ch-metric"><div class="ch-metric-num">470K+</div><div class="ch-metric-lbl">Monthly Pinterest Views</div></div>
+      <div class="ch-metric"><div class="ch-metric-num">550K+</div><div class="ch-metric-lbl">Monthly Pinterest Views</div></div>
       <div class="ch-metric"><div class="ch-metric-num">Gen Z</div><div class="ch-metric-lbl">Core Audience</div></div>
     </div>
     <div class="ch-tags">
@@ -656,13 +517,14 @@ footer { padding-top: 20px; border-top: 1px solid var(--border); display: flex; 
     </div>
   </div>
 
+  <!-- Sole Foreal -->
   <div class="channel-card ch-sole">
     <div class="ch-inner-eyebrow">// Channel 02 · Footwear · Pinterest</div>
     <div class="ch-name">Sole Foreal</div>
     <p class="ch-desc">Dedicated sneaker and footwear channel on Pinterest. Fast-growing niche audience — highly engaged, purchase-intent driven. The right place for footwear brands who want reach that converts.</p>
     <div class="ch-metric-row">
-      <div class="ch-metric"><div class="ch-metric-num">70K+</div><div class="ch-metric-lbl">Monthly Pinterest Views</div></div>
-      <div class="ch-metric"><div class="ch-metric-num">↑ Fast</div><div class="ch-metric-lbl">Growth Trend</div></div>
+      <div class="ch-metric"><div class="ch-metric-num">80K+</div><div class="ch-metric-lbl">Monthly Pinterest Views</div></div>
+      <div class="ch-metric"><div class="ch-metric-num">&#8593; Fast</div><div class="ch-metric-lbl">Growth Trend</div></div>
     </div>
     <div class="ch-tags">
       <span class="ch-tag">Footwear</span>
@@ -674,8 +536,28 @@ footer { padding-top: 20px; border-top: 1px solid var(--border); display: flex; 
     </div>
   </div>
 
+  <!-- Man Foreal -->
+  <div class="channel-card ch-man">
+    <div class="ch-inner-eyebrow">// Channel 03 · Men's Fashion · Pinterest</div>
+    <div class="ch-name">Man Foreal</div>
+    <p class="ch-desc">Men's lifestyle and casual outfit inspiration on Pinterest. Our fastest-growing channel — 1M+ monthly views and climbing. The destination for men's fashion and lifestyle brands who want serious reach with a highly engaged male audience.</p>
+    <div class="ch-metric-row">
+      <div class="ch-metric"><div class="ch-metric-num">1M+</div><div class="ch-metric-lbl">Monthly Pinterest Views</div></div>
+      <div class="ch-metric"><div class="ch-metric-num">&#8593; Fast</div><div class="ch-metric-lbl">Growth Trend</div></div>
+    </div>
+    <div class="ch-tags">
+      <span class="ch-tag">Men's Fashion</span>
+      <span class="ch-tag">Live</span>
+      <a href="https://www.pinterest.com/casual_man_outfits/" target="_blank" class="ch-link ch-link-ora">
+        <svg width="10" height="10" viewBox="0 0 24 24" fill="currentColor"><path d="M12 0C5.373 0 0 5.373 0 12c0 5.084 3.163 9.426 7.627 11.174-.105-.949-.2-2.405.042-3.441.218-.937 1.407-5.965 1.407-5.965s-.359-.719-.359-1.782c0-1.668.967-2.914 2.171-2.914 1.023 0 1.518.769 1.518 1.69 0 1.029-.655 2.568-.994 3.995-.283 1.194.599 2.169 1.777 2.169 2.133 0 3.772-2.249 3.772-5.495 0-2.873-2.064-4.882-5.012-4.882-3.414 0-5.418 2.561-5.418 5.207 0 1.031.397 2.138.893 2.738a.36.36 0 0 1 .083.345l-.333 1.36c-.053.22-.174.267-.402.161-1.499-.698-2.436-2.889-2.436-4.649 0-3.785 2.75-7.262 7.929-7.262 4.163 0 7.398 2.967 7.398 6.931 0 4.136-2.607 7.464-6.227 7.464-1.216 0-2.359-.632-2.75-1.378l-.748 2.853c-.271 1.043-1.002 2.35-1.492 3.146C9.57 23.812 10.763 24 12 24c6.627 0 12-5.373 12-12S18.627 0 12 0z"/></svg>
+        View on Pinterest ↗
+      </a>
+    </div>
+  </div>
+
+  <!-- Beauty Foreal -->
   <div class="channel-card ch-beauty">
-    <div class="ch-inner-eyebrow">// Channel 03 · Beauty · Now Accepting Founding Brand Partners</div>
+    <div class="ch-inner-eyebrow">// Channel 04 · Beauty · Now Accepting Founding Brand Partners</div>
     <div class="ch-name">Beauty Foreal</div>
     <p class="ch-desc">Pinterest just launched in test mode. Affiliate marketing actively running. Anchored by <strong style="color:#C4B5FD;">@drian_p_bautista</strong> — 500K followers across IG and TikTok, with videos already crossing 1 million views. First beauty brands in get founding placement.</p>
     <div class="ch-metric-row">
@@ -763,6 +645,7 @@ footer { padding-top: 20px; border-top: 1px solid var(--border); display: flex; 
         <option value="">Category</option>
         <option>Fashion</option>
         <option>Footwear</option>
+        <option>Men's Fashion</option>
         <option>Beauty</option>
         <option>Lifestyle</option>
         <option>Other</option>
@@ -835,7 +718,6 @@ footer { padding-top: 20px; border-top: 1px solid var(--border); display: flex; 
     </div>
     <div class="cta-actions">
       <a href="#apply2" class="btn-ora">Apply for Free Round →</a>
-      <a href="https://783labs.vercel.app" target="_blank" class="btn-ghost-dark">About 783 Labs ↗</a>
     </div>
   </div>
 
@@ -848,7 +730,6 @@ footer { padding-top: 20px; border-top: 1px solid var(--border); display: flex; 
       <span class="footer-sub">Content Studio · LA</span>
     </div>
     <div class="footer-right">
-      <a href="https://783labs.vercel.app">783labs.vercel.app</a><br>
       © 2026 783 Labs
     </div>
   </footer>
@@ -856,14 +737,12 @@ footer { padding-top: 20px; border-top: 1px solid var(--border); display: flex; 
 </div>
 
 <script>
-// Sticky bar on scroll
 window.addEventListener('scroll', () => {
   const bar = document.getElementById('stickyBar');
   if (window.scrollY > 400) bar.classList.add('visible');
   else bar.classList.remove('visible');
 });
 
-// Hero form submit
 function submitHeroForm() {
   const name = document.getElementById('heroName').value.trim();
   const cat  = document.getElementById('heroCat').value;
@@ -874,7 +753,6 @@ function submitHeroForm() {
   msg.style.color = '#22c55e';
 }
 
-// Mid-page form submit
 function submitMidForm() {
   const name = document.getElementById('formName').value.trim();
   const cat  = document.getElementById('formCat').value;
